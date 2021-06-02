@@ -71,7 +71,11 @@ namespace NetworkManager
             string data = userData.Text;
 
             if ((bool)faChck.IsChecked)
+            {
                 commander.DoCableTestMES(data);
+                commander.SendCommand("y\n");
+            }
+                
             else if ((bool)ethChck.IsChecked)
                 commander.DoCableTestQSW(data);
             else if ((bool)dlinkChck.IsChecked)
