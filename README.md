@@ -23,3 +23,7 @@ v 0.9.6
 v 0.9.7
 - the ability to add a description to the MES3124 port
 - removed the switch type check from the logger window and redone it using a checkbox
+
+v 0.9.8
+- UI dark theme
+- added xDSL support (WIP)
