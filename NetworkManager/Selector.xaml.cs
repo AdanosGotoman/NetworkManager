@@ -1,4 +1,5 @@
-﻿using NetworkManager.UI.xPON;
+﻿using NetworkManager.SNMP;
+using NetworkManager.UI.xPON;
 using System.Windows;
 
 namespace NetworkManager.UI
@@ -26,6 +27,12 @@ namespace NetworkManager.UI
             ETH_Tool wnd = new ETH_Tool();
             wnd.Show();
             //Application.Current.Windows[0].Close();
+        }
+
+        private void OpenSNMP(object sender, RoutedEventArgs e)
+        {
+            LoggerSNMP wnd = new LoggerSNMP();
+            wnd.Show();
         }
     }
 }
