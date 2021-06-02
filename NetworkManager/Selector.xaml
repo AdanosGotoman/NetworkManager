@@ -1,0 +1,15 @@
+﻿<Window x:Class="NetworkManager.UI.Selector"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Selector" Height="220" Width="300" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF212121">
+        <Button x:Name="btnEltex" Content="Eltex" Margin="0,80,50,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="85" Click="OpenEltex" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+        <Button x:Name="btnHuawei" Content="Huawei" Margin="50,80,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="85" Click="OpenHuawei" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+        <Button x:Name="btnDSL" Content="xDSL" Margin="0,126,50,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="85" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+        <Button x:Name="btnETH" Content="Ethernet" Margin="50,126,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="85" Click="OpenEthernet" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+
+    </Grid>
+</Window>
