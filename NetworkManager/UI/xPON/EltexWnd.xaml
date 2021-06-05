@@ -66,19 +66,19 @@
                         <TabItem Header="Configure ONT" Background="#FF212121" Foreground="#FF0094FF">
                             <Grid Background="#FF212121">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="229*"/>
-                                    <ColumnDefinition Width="1039*"/>
+                                    <ColumnDefinition Width="271*"/>
+                                    <ColumnDefinition Width="997*"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBox x:Name="configuringWND" TextWrapping="Wrap" Grid.Column="1" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow" Margin="0,10,10,10"/>
-                                <Label Content="User data" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="60" Foreground="#FF0094FF"/>
-                                <TextBox x:Name="configuringData" HorizontalAlignment="Left" Margin="94,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Height="22" Foreground="#FF0094FF" Text="123" Cursor="IBeam"/>
-                                <TextBox x:Name="ontDescription" HorizontalAlignment="Left" Margin="94,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Height="22" Foreground="#FF0094FF"/>
-                                <Label Content="ONT description" HorizontalAlignment="Left" Margin="0,27,0,0" VerticalAlignment="Top" Height="26" Width="97" Foreground="#FF0094FF"/>
-                                <Label Content="ONT serial" HorizontalAlignment="Left" Margin="0,58,0,0" VerticalAlignment="Top" Height="26" Width="64" Foreground="#FF0094FF"/>
-                                <TextBox x:Name="ontSerial" HorizontalAlignment="Left" Margin="94,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" Height="22" Foreground="#FF0094FF"/>
-                                <Button x:Name="btnConfigureONT" Content="Configure ONT" HorizontalAlignment="Left" Margin="0,96,0,0" VerticalAlignment="Top" Click="ConfigureTerminal" Height="29" Width="219" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
-                                <Button x:Name="btnDeleteONT" Content="Delete ONT" HorizontalAlignment="Left" Margin="0,130,0,0" VerticalAlignment="Top" Click="DeleteONT" Height="29" Width="219" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
-                                <Button x:Name="btnRestoreONT" Content="Restore ONT" HorizontalAlignment="Left" Margin="0,164,0,0" VerticalAlignment="Top" Click="RestoreONT" Height="29" Width="219" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <Label Content="User data" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="110" Foreground="#FF0094FF"/>
+                                <TextBox x:Name="configuringData" HorizontalAlignment="Left" Margin="136,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="22" Foreground="#FF0094FF" Cursor="IBeam"/>
+                                <TextBox x:Name="ontDescription" HorizontalAlignment="Left" Margin="136,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="22" Foreground="#FF0094FF"/>
+                                <Label Content="ONT description" HorizontalAlignment="Left" Margin="0,27,0,0" VerticalAlignment="Top" Height="26" Width="110" Foreground="#FF0094FF"/>
+                                <Label Content="ONT serial" HorizontalAlignment="Left" Margin="0,58,0,0" VerticalAlignment="Top" Height="26" Width="110" Foreground="#FF0094FF"/>
+                                <TextBox x:Name="ontSerial" HorizontalAlignment="Left" Margin="136,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Height="22" Foreground="#FF0094FF"/>
+                                <Button x:Name="btnConfigureONT" Content="Configure ONT" HorizontalAlignment="Center" Margin="0,96,0,0" VerticalAlignment="Top" Click="ConfigureTerminal" Height="30" Width="250" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <Button x:Name="btnDeleteONT" Content="Delete ONT" HorizontalAlignment="Center" Margin="0,130,0,0" VerticalAlignment="Top" Click="DeleteONT" Height="30" Width="250" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <Button x:Name="btnRestoreONT" Content="Restore ONT" HorizontalAlignment="Center" Margin="0,164,0,0" VerticalAlignment="Top" Click="RestoreONT" Height="30" Width="250" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
                             </Grid>
                         </TabItem>
                     </TabControl>
