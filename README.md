@@ -27,3 +27,9 @@ v 0.9.7
 v 0.9.8
 - UI dark theme
 - added xDSL support (WIP)
+- added SNMP support
+
+# Used libs
+https://github.com/SuperTao/Telnet
+
+https://github.com/rqx110/SnmpSharpNet
