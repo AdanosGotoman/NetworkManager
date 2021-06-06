@@ -135,7 +135,7 @@ namespace NetworkManager.UI.xPON
 
             commander.SendCommand("send omci restore interface ont " + userData);
 
-            writer = new RedirectOutput(unactivatedSlotPort);
+            writer = new RedirectOutput(configuringWND);
             Console.SetOut(writer);
             Console.WriteLine(telnet.Read());
         }
