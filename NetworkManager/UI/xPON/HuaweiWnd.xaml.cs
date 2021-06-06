@@ -29,7 +29,7 @@ namespace NetworkManager.UI.xPON
             telnet = commander.GetTelnet();
 
             auth = telnet.Login(login, password, 1200);
-            logger.Text = auth;
+            statusConnection.Content = "Connected";
         }
 
         private void Disconnect(object sender, RoutedEventArgs e)
@@ -37,12 +37,10 @@ namespace NetworkManager.UI.xPON
             commander.CloseConnectionHuawei();
             commander.SendCommand("y");
 
-            writer = new RedirectOutput(logger);
-            Console.SetOut(writer);
-            Console.WriteLine(telnet.Read());
-
-            MessageBox.Show("Connection closed successful");
+            commander.CloseConnection();
             ClearAll(sender, e);
+
+            statusConnection.Content = "Disconnected";
         }
 
         // To get all types of configuration at session start
@@ -144,6 +142,7 @@ namespace NetworkManager.UI.xPON
 
             commander.EnableAdmin_V1();
             commander.ShowInfoONTBySlot(slot);
+            commander.SendCommand("\n");
             commander.DisableAdmin();
 
             writer = new RedirectOutput(infoTable);
@@ -166,7 +165,6 @@ namespace NetworkManager.UI.xPON
 
         public void ClearAll(object sender, RoutedEventArgs e)
         {
-            logger.Text = "";
             configWND.Text = "";
             stateWND.Text = "";
             ontListAutofind.Text = "";
@@ -183,15 +181,12 @@ namespace NetworkManager.UI.xPON
             loginField.Text = "";
             passField.Text = "";
             userData.Text = "";
-        }
-
-        private void ContinueLog(object sender, RoutedEventArgs e)
-        {
-            commander.SendCommand("\n");
-
-            writer = new RedirectOutput(infoTable);
-            Console.SetOut(writer);
-            Console.WriteLine(telnet.Read());
+            dataForMAC.Text = "";
+            dataForSrvPorts.Text = "";
+            macID.Text = "";
+            macAddress.Text = "";
+            portField.Text = "";
+            port_id.Text = "";
         }
 
         private void ShowConnectionHistory(object sender, RoutedEventArgs e)
@@ -213,13 +208,10 @@ namespace NetworkManager.UI.xPON
 
         private void UpdateStateByPort(object sender, RoutedEventArgs e)
         {
-            string port = portField.Text;
-            string data = userData.Text;
-
             commander.EnableAdmin_V1();
             commander.EnableAdmin_V2();
-            commander.EnableAdmin_V3(data);
-            commander.ShowPhysXErrorHuawei(port);
+            commander.EnableAdmin_V3(userData.Text);
+            commander.ShowPhysXErrorHuawei(portField.Text);
 
             commander.CloseInterfaceMode();
             commander.DisableAdmin();

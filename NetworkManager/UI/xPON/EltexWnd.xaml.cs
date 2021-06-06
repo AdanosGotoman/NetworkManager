@@ -25,19 +25,15 @@ namespace NetworkManager.UI.xPON
             telnet = commander.GetTelnet();
 
             auth = telnet.Login(login, password, 1000);
-            logger.Text = auth;
+            statusConnection.Content = "Connected";
         }
 
         private void Disconnect(object sender, RoutedEventArgs e)
         {
             commander.CloseConnection();
-
-            writer = new RedirectOutput(logger);
-            Console.SetOut(writer);
-            Console.WriteLine(telnet.Read());
             ClearAll(sender, e);
 
-            MessageBox.Show("Connection closed successful");
+            statusConnection.Content = "Disconnected";
         }
 
         // To get all types of configuration at session start
@@ -179,7 +175,6 @@ namespace NetworkManager.UI.xPON
 
         public void ClearAll(object sender, RoutedEventArgs e)
         {
-            logger.Text = "";
             configWND.Text = "";
             stateWND.Text = "";
             connectionHistory.Text = "";
@@ -190,6 +185,10 @@ namespace NetworkManager.UI.xPON
             configuringData.Text = "";
             ontDescription.Text = "";
             macTable.Text = "";
+            ipField.Text = "";
+            loginField.Text = "";
+            passField.Text = "";
+            userData.Text = "";
         }
     }
 }

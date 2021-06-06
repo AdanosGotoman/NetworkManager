@@ -1,6 +1,7 @@
 ﻿using NetworkManager.TelnetCore;
 using System;
 using System.IO;
+using System.Threading;
 using System.Windows;
 using ToolkitUI.TelnetCore;
 
@@ -25,19 +26,15 @@ namespace NetworkManager
             telnet = commander.GetTelnet();
 
             auth = telnet.Login(login, password, 1200);
-            logger.Text = auth;
+            statusConnection.Content = "Connected";
         }
 
         private void Disconnect(object sender, RoutedEventArgs e)
         {
             commander.CloseConnection();
-
-            writer = new RedirectOutput(logger);
-            Console.SetOut(writer);
-            Console.WriteLine(telnet.Read());
             ClearAll(sender, e);
 
-            MessageBox.Show("Connection closed successful");
+            statusConnection.Content = "Disconnected";
         }
 
         public void Run(object sender, RoutedEventArgs e)
@@ -78,8 +75,11 @@ namespace NetworkManager
                 
             else if ((bool)ethChck.IsChecked)
                 commander.DoCableTestQSW(data);
+                
             else if ((bool)dlinkChck.IsChecked)
                 commander.DoCableTestDLink(data);
+
+            Thread.Sleep(2000);
 
             writer = new RedirectOutput(cableTest);
             Console.SetOut(writer);
@@ -136,7 +136,11 @@ namespace NetworkManager
             else if ((bool)giChck.IsChecked)
                 commander.ShowPhysXErrorsAggregation(data);
             else if ((bool)ethChck.IsChecked)
+            {
                 commander.ShowPhysXErrorQSW(data);
+                commander.SendCommand("q");
+            }
+                
             else if ((bool)dlinkChck.IsChecked)
                 commander.ShowPhysXErrorDlink(data);
 
@@ -157,7 +161,6 @@ namespace NetworkManager
 
         public void ClearAll(object sender, RoutedEventArgs e)
         {
-            logger.Text = "";
             configWND.Text = "";
             cableTest.Text = "";
             macTable.Text = "";
@@ -190,7 +193,6 @@ namespace NetworkManager
             writer = new RedirectOutput(configWNDAggregate);
             Console.SetOut(writer);
             Console.WriteLine(telnet.Read());
-
         }
 
         private void SendDescription(object sender, RoutedEventArgs e)

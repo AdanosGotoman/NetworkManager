@@ -20,7 +20,7 @@
         <Label Content="IP address" HorizontalAlignment="Left" Margin="0,6,0,0" VerticalAlignment="Top" Height="23" Width="70"/>
         <Label Content="User data" HorizontalAlignment="Left" Margin="0,35,0,0" VerticalAlignment="Top" Height="23" Width="67"/>
         <TextBox x:Name="userData" HorizontalAlignment="Left" Margin="72,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="23" Foreground="#FF0094FF"/>
-        <TabControl Margin="0,212,0,0" Background="#FF3F3F3F">
+        <TabControl Margin="0,63,0,0" Background="#FF3F3F3F">
             <TabItem Header="Base configure mode" Background="#FF212121" Foreground="#FF0094FF">
                 <Grid Background="#FF212121">
                     <TabControl Background="#FF3F3F3F">
@@ -91,9 +91,10 @@
         <Label Content="Password" HorizontalAlignment="Left" Margin="197,35,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.253,-0.198" Height="23" Width="69"/>
         <TextBox x:Name="ipField" HorizontalAlignment="Left" Margin="72,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="27" Foreground="#FF0094FF"/>
         <Button x:Name="btnConnect" Content="Connect" HorizontalAlignment="Left" Margin="414,8,0,0" VerticalAlignment="Top" Click="Connect" Height="24" Width="86" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF226C53" Foreground="#FF0094FF"/>
-        <TextBox x:Name="logger" Margin="4,70,16,0" TextWrapping="Wrap" Height="137" VerticalAlignment="Top" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
         <Button x:Name="btnDisconnect" Content="Disconnect" HorizontalAlignment="Left" Margin="505,8,0,0" VerticalAlignment="Top" Height="24" Width="104" Click="Disconnect" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF6C2222" Foreground="#FF0094FF"/>
         <Button x:Name="btnRun" Content="Run" HorizontalAlignment="Left" Margin="414,33,0,0" VerticalAlignment="Top" Width="86" Height="23" Click="Run" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF226C53" Foreground="#FF0094FF"/>
         <Button x:Name="btnClear" Content="Clear all" HorizontalAlignment="Left" Margin="505,34,0,0" VerticalAlignment="Top" Width="104" Height="22" Click="ClearAll" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF6C2222" Foreground="#FF0094FF"/>
+        <Label Content="Connection status" HorizontalAlignment="Left" Margin="1050,4,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="statusConnection" Content="" HorizontalAlignment="Left" Margin="1160,3,0,0" VerticalAlignment="Top" Foreground="#FF0094FF"/>
     </Grid>
 </Window>
