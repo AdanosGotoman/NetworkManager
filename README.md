@@ -29,6 +29,11 @@ v 0.9.8
 - added xDSL support (WIP)
 - added SNMP support
 
+v 0.9.9
+- removed logger window
+- added connection status label
+- other UI fixes
+
 # Used libs
 https://github.com/SuperTao/Telnet
 
