@@ -1,6 +1,4 @@
-# Description
-New variant of the Network Toolkit (Telnet UI client), rewritten from Java to C#
-
+# Build client
 You may build this toolkit from .sln file
 
 # Functionality
