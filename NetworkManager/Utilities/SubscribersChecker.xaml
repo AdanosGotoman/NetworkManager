@@ -1,0 +1,26 @@
+﻿<Window x:Class="NetworkManager.Utilities.SubscribersChecker"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Subscribers Checker" Height="1024" Width="1280">
+    <Grid Background="#FF212121">
+        <Button x:Name="btnGetAuth" Content="Get authorisation" Margin="0,0,10,10" Height="32" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF" Click="GetSubscrAuth" HorizontalAlignment="Right" Width="146"/>
+        <TextBox x:Name="login" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276" Foreground="#FF0094FF" Height="32" FontSize="14"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="314,10,0,0" VerticalAlignment="Top" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF" Click="StartSearch"/>
+        <CheckBox x:Name="nvkzBRAS" Content="BRAS" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top" Foreground="#FF0094FF"/>
+        <CheckBox x:Name="nvkzGrad" Content="NVKZ" HorizontalAlignment="Left" Margin="79,47,0,0" VerticalAlignment="Top" Foreground="#FF0094FF"/>
+        <DataGrid x:Name="dataTable" Margin="10,529,10,47"/>
+        <Label Content="User name:" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="79,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" Height="21" Foreground="#FF0094FF"/>
+        <Label Content="IP Addres:" HorizontalAlignment="Left" Margin="10,101,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ipField" HorizontalAlignment="Left" Margin="79,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" Foreground="#FF0094FF"/>
+        <Label Content="IP Netmask:" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ipNetmask" HorizontalAlignment="Left" Margin="79,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" Foreground="#FF0094FF"/>
+        <Label Content="Primary DNS address:" HorizontalAlignment="Left" Margin="10,153,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="129,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157" Foreground="#FF0094FF"/>
+        <TextBox x:Name="resultWND" HorizontalAlignment="Left" Margin="330,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="940" Height="430" Foreground="#FF0094FF"/>
+
+    </Grid>
+</Window>

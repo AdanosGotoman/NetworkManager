@@ -11,9 +11,10 @@
         <Button x:Name="btnDSL" Content="xDSL" Margin="0,126,50,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="85" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
         <Button x:Name="btnETH" Content="Ethernet" Margin="50,126,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="85" Click="OpenEthernet" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
 
-        <Menu Height="22" Name="menu" Width="300" Margin="0, 0, 5, 5" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF3F3F3F">
-            <MenuItem x:Name="toolItem" Header="Tools" Height="22" Margin="0,0,5,5">
+        <Menu Name="menu" Width="300" HorizontalAlignment="Center" Background="#FF3F3F3F" Height="28" VerticalAlignment="Top">
+            <MenuItem x:Name="toolItem" Header="Tools" Height="28">
                 <MenuItem x:Name="snmpTool" Header="SNMP tool" Click="OpenSNMP"/>
+                <MenuItem x:Name="subcribers" Header="Subscribers Check" Click="OpenSubChecker"/>
             </MenuItem>
         </Menu>
 
