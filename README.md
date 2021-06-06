@@ -1,6 +1,4 @@
-# Description
-New variant of the Network Toolkit (Telnet UI client), rewritten from Java to C#
-
+# Build client
 You may build this toolkit from .sln file
 
 # Functionality
@@ -28,6 +26,11 @@ v 0.9.8
 - UI dark theme
 - added xDSL support (WIP)
 - added SNMP support
+
+v 0.9.9
+- removed logger window
+- added connection status label
+- other UI fixes
 
 # Used libs
 https://github.com/SuperTao/Telnet
