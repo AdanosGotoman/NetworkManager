@@ -1,0 +1,48 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+    <v:String x:Key="lbl_Title">SPD Toolkit</v:String>
+    <v:String x:Key="lbl_Port">Port</v:String>
+    <v:String x:Key="lbl_Login">Login</v:String>
+    <v:String x:Key="lbl_Password">Password</v:String>
+    <v:String x:Key="btn_Connect">Connect</v:String>
+    <v:String x:Key="btn_Disconnect">Disconnect</v:String>
+    <v:String x:Key="btn_Run">Run</v:String>
+    <v:String x:Key="btn_Clear">Clear all</v:String>
+    <v:String x:Key="lbl_ConnectStatus">Connection status</v:String>
+    <v:String x:Key="lbl_UserData">User data</v:String>
+    <v:String x:Key="lbl_Description">Description</v:String>
+    <v:String x:Key="lbl_Serial">Serial</v:String>
+    <v:String x:Key="lbl_TagVlanList">Tagged VLAN list</v:String>
+    <v:String x:Key="lbl_UntaggedVlan">Untagged VLAN</v:String>
+    <v:String x:Key="lbl_NativeVlan">Native VLAN</v:String>
+    <v:String x:Key="lbl_MCASTVlan">Multicast VLAN</v:String>
+    <v:String x:Key="lbl_LoopBackDetection">Loopback detection</v:String>
+
+    <v:String x:Key="tab_BaseMode">Base configure mode</v:String>
+    <v:String x:Key="tab_LogicMode">Logic mode</v:String>
+    <v:String x:Key="tab_Configs">Configuration</v:String>
+    <v:String x:Key="tab_ConfigEditMode">Configure terminal</v:String>
+    <v:String x:Key="tab_AggregateDescr">Aggregation descriptions</v:String>
+    <v:String x:Key="tab_CableDiag">Cable diagnostic</v:String>
+    <v:String x:Key="tab_State">State</v:String>
+    <v:String x:Key="tab_ConnectHistory">Connection history</v:String>
+    <v:String x:Key="tab_ConnectStatus">Connection status</v:String>
+    <v:String x:Key="tab_UnactivatedList">Unactivated ONT</v:String>
+
+    <v:String x:Key="btn_UpdateConfig">Update configuration</v:String>
+    <v:String x:Key="btn_UpdateState">Update state</v:String>
+    <v:String x:Key="btn_UpdateHistory">Update history</v:String>
+    <v:String x:Key="btn_ShowOnPort">Show on port</v:String>
+    <v:String x:Key="btn_ShowOnSlot">Show on slot</v:String>
+    <v:String x:Key="btn_PhysXErrors">Show PhysX errors</v:String>
+    <v:String x:Key="btn_ConfigEditMode">Configure terminal</v:String>
+    <v:String x:Key="btn_InterfaceDescr">Show interfaces description</v:String>
+    <v:String x:Key="btn_AggregateSendDescr">Send description</v:String>
+    <v:String x:Key="btn_CloseConfigMode">Close config mode</v:String>
+    <v:String x:Key="btn_CableDiag">Show cable length</v:String>
+    <v:String x:Key="btn_MacTable">Show MAC table</v:String>
+    <v:String x:Key="btn_VlanTable">Show VLAN table</v:String>
+    <v:String x:Key="btn_DeleteONT">Delete</v:String>
+    <v:String x:Key="btn_RestoreONT">Restore</v:String>
+</ResourceDictionary>

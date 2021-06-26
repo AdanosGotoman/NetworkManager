@@ -1,6 +1,5 @@
 ﻿using NetworkManager.SNMP;
 using NetworkManager.UI.xPON;
-using NetworkManager.Utilities;
 using System.Windows;
 
 namespace NetworkManager.UI
@@ -33,12 +32,6 @@ namespace NetworkManager.UI
         private void OpenSNMP(object sender, RoutedEventArgs e)
         {
             LoggerSNMP wnd = new LoggerSNMP();
-            wnd.Show();
-        }
-
-        private void OpenSubChecker(object sender, RoutedEventArgs e)
-        {
-            SubscribersChecker wnd = new SubscribersChecker();
             wnd.Show();
         }
     }

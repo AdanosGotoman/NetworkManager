@@ -12,73 +12,73 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="NetworkToolkit" Height="1024" Width="1280">
-    <Grid Background="#FF212121">
+    <Grid Background="#FF212121" Margin="0,40,0,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
         <Label Content="IP address" HorizontalAlignment="Left" Margin="0,6,0,0" VerticalAlignment="Top" Height="23" Width="70"/>
-        <Label Content="User data" HorizontalAlignment="Left" Margin="0,35,0,0" VerticalAlignment="Top" Height="23" Width="67"/>
-        <TextBox x:Name="userData" HorizontalAlignment="Left" Margin="72,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="23" Foreground="#FF0094FF"/>
+        <Label Content="{DynamicResource lbl_UserData}" Margin="0,35,0,0" VerticalAlignment="Top" Height="23" Width="85" HorizontalAlignment="Left"/>
+        <TextBox x:Name="userData" HorizontalAlignment="Left" Margin="90,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Height="23" Foreground="#FF0094FF"/>
         <TabControl Margin="0,63,0,0" Background="#FF3F3F3F">
-            <TabItem Header="Base configure mode" Background="#FF212121" Foreground="#FF0094FF">
+            <TabItem Header="{DynamicResource tab_BaseMode}" Background="#FF212121" Foreground="#FF0094FF">
                 <Grid Background="#FF212121">
                     <TabControl Background="#FF3F3F3F">
-                        <TabItem Header="Configuration" Background="#FF212121" Foreground="#FF0094FF">
+                        <TabItem Header="{DynamicResource tab_Configs}" Background="#FF212121" Foreground="#FF0094FF">
                             <Grid Background="#FF212121">
                                 <TextBox x:Name="configWND" TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" Margin="10,10,639,46" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
-                                <Button x:Name="btnConfigUpdate" Content="Update configuration" Margin="10,0,0,15" Click="UpdateConfiguration" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="166" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <Button x:Name="btnConfigUpdate" Content="{DynamicResource btn_UpdateConfig}" Margin="10,0,0,15" Click="UpdateConfiguration" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="auto" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
                                 <TextBox x:Name="macTable" TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" Margin="639,10,10,46" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
-                                <Button x:Name="btnMacTable" Content="Show MAC table" Margin="639,0,0,15" Click="ShowMacTable" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="149" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <Button x:Name="btnMacTable" Content="{DynamicResource btn_MacTable}" Margin="639,0,0,15" Click="ShowMacTable" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="auto" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="State" Background="#FF212121" Foreground="#FF0094FF">
+                        <TabItem Header="{DynamicResource tab_State}" Background="#FF212121" Foreground="#FF0094FF">
                             <Grid Background="#FF212121">
                                 <TextBox x:Name="stateWND" TextWrapping="Wrap" Margin="10,10,10,46" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
-                                <Button x:Name="btnUpdateState" Content="Update state" HorizontalAlignment="Left" Margin="10,0,0,17" Click="UpdateState" Height="24" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <Button x:Name="btnUpdateState" Content="{DynamicResource btn_UpdateState}" HorizontalAlignment="Left" Margin="10,0,0,17" Click="UpdateState" Height="24" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="Connection history" Background="#FF212121" Foreground="#FF0094FF">
+                        <TabItem Header="{DynamicResource tab_ConnectHistory}" Background="#FF212121" Foreground="#FF0094FF">
                             <Grid Background="#FF212121">
                                 <TextBox x:Name="connectionHistory" TextWrapping="Wrap" Margin="10,10,10,46" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow" FontFamily="Liberation Mono"/>
-                                <Button x:Name="btnUpdateConnectHistory" Content="Update connection history" HorizontalAlignment="Left" Margin="10,0,0,15" Click="UpdateConnectHistory" Height="26" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <Button x:Name="btnUpdateConnectHistory" Content="{DynamicResource btn_UpdateHistory}" HorizontalAlignment="Left" Margin="10,0,0,15" Click="UpdateConnectHistory" Height="26" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="Connection online/offline" Background="#FF212121" Foreground="#FF0094FF">
+                        <TabItem Header="{DynamicResource tab_ConnectStatus}" Background="#FF212121" Foreground="#FF0094FF">
                             <Grid Background="#FF212121">
                                 <TextBox x:Name="connectionState" TextWrapping="Wrap" Margin="10,10,10,46" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow" FontFamily="Liberation Mono"/>
-                                <Button x:Name="btnUpdateConnectState" Content="Update connection state" HorizontalAlignment="Left" Margin="10,0,0,15" Click="UpdateConnectionState" Height="26" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <Button x:Name="btnUpdateConnectState" Content="{DynamicResource btn_UpdateState}" HorizontalAlignment="Left" Margin="10,0,0,15" Click="UpdateConnectionState" Height="26" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="Unactivated ONT list" Background="#FF212121" Foreground="#FF0094FF">
+                        <TabItem Header="{DynamicResource tab_UnactivatedList}" Background="#FF212121" Foreground="#FF0094FF">
                             <Grid Background="#FF212121">
-                                <TextBox x:Name="unactivatedSlot" TextWrapping="Wrap" Margin="152,10,10,459" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
-                                <TextBox x:Name="unactivatedSlotPort" TextWrapping="Wrap" Margin="152,460,10,10" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
+                                <TextBox x:Name="unactivatedSlot" TextWrapping="Wrap" Margin="168,10,10,420" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
+                                <TextBox x:Name="unactivatedSlotPort" TextWrapping="Wrap" Margin="168,420,10,10" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
                                 <TextBox x:Name="slot" HorizontalAlignment="Left" Margin="101,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="46" Height="25"/>
-                                <TextBox x:Name="slot_port" HorizontalAlignment="Left" Margin="101,497,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="46" Height="25"/>
-                                <Button x:Name="btnBySlot" Content="Show on slot" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="147" Click="ShowBySlot" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
-                                <Button x:Name="btnBySlotPort" Content="Show on slot/port" HorizontalAlignment="Left" Margin="0,460,0,0" VerticalAlignment="Top" Width="147" Click="ShowBySlotPort" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Hand"/>
+                                <TextBox x:Name="slot_port" HorizontalAlignment="Left" Margin="101,458,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="46" Height="25"/>
+                                <Button x:Name="btnBySlot" Content="{DynamicResource btn_ShowOnPort}" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="auto" Click="ShowBySlot" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <Button x:Name="btnBySlotPort" Content="{DynamicResource btn_ShowOnSlot}" HorizontalAlignment="Left" Margin="0,420,0,0" VerticalAlignment="Top" Width="auto" Click="ShowBySlotPort" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Hand"/>
                                 <Label Content="Slot" HorizontalAlignment="Left" Margin="74,47,0,0" VerticalAlignment="Top"/>
-                                <Label Content="Slot/Port" HorizontalAlignment="Left" Margin="44,497,0,0" VerticalAlignment="Top"/>
+                                <Label Content="Slot/Port" HorizontalAlignment="Left" Margin="44,458,0,0" VerticalAlignment="Top"/>
                                 <Separator VerticalAlignment="Center" Height="12"/>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="Configure ONT" Background="#FF212121" Foreground="#FF0094FF">
+                        <TabItem Header="{DynamicResource tab_ConfigEditMode}" Background="#FF212121" Foreground="#FF0094FF">
                             <Grid Background="#FF212121">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="271*"/>
                                     <ColumnDefinition Width="997*"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBox x:Name="configuringWND" TextWrapping="Wrap" Grid.Column="1" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow" Margin="0,10,10,10"/>
-                                <Label Content="User data" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="110" Foreground="#FF0094FF"/>
+                                <Label Content="{DynamicResource lbl_UserData}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="110" Foreground="#FF0094FF"/>
                                 <TextBox x:Name="configuringData" Margin="136,4,11,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Foreground="#FF0094FF" Cursor="IBeam"/>
                                 <TextBox x:Name="ontDescription" Margin="136,31,11,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Foreground="#FF0094FF"/>
-                                <Label Content="ONT description" HorizontalAlignment="Left" Margin="0,27,0,0" VerticalAlignment="Top" Height="26" Width="110" Foreground="#FF0094FF"/>
-                                <Label Content="ONT serial" HorizontalAlignment="Left" Margin="0,58,0,0" VerticalAlignment="Top" Height="26" Width="110" Foreground="#FF0094FF"/>
+                                <Label Content="{DynamicResource lbl_Description}" HorizontalAlignment="Left" Margin="0,27,0,0" VerticalAlignment="Top" Height="26" Width="110" Foreground="#FF0094FF"/>
+                                <Label Content="{DynamicResource lbl_Serial}" HorizontalAlignment="Left" Margin="0,58,0,0" VerticalAlignment="Top" Height="26" Width="110" Foreground="#FF0094FF"/>
                                 <TextBox x:Name="ontSerial" Margin="136,62,11,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Foreground="#FF0094FF"/>
-                                <Button x:Name="btnConfigureONT" Content="Configure ONT" HorizontalAlignment="Right" Margin="0,96,11,0" VerticalAlignment="Top" Click="ConfigureTerminal" Height="30" Width="250" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
-                                <Button x:Name="btnDeleteONT" Content="Delete ONT" HorizontalAlignment="Right" Margin="0,130,11,0" VerticalAlignment="Top" Click="DeleteONT" Height="30" Width="250" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
-                                <Button x:Name="btnRestoreONT" Content="Restore ONT" HorizontalAlignment="Right" Margin="0,164,11,0" VerticalAlignment="Top" Click="RestoreONT" Height="30" Width="250" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <Button x:Name="btnConfigureONT" Content="{DynamicResource btn_ConfigEditMode}" HorizontalAlignment="Right" Margin="0,96,11,0" VerticalAlignment="Top" Click="ConfigureTerminal" Height="30" Width="250" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <Button x:Name="btnDeleteONT" Content="{DynamicResource btn_DeleteONT}" HorizontalAlignment="Right" Margin="0,130,11,0" VerticalAlignment="Top" Click="DeleteONT" Height="30" Width="250" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <Button x:Name="btnRestoreONT" Content="{DynamicResource btn_RestoreONT}" HorizontalAlignment="Right" Margin="0,164,11,0" VerticalAlignment="Top" Click="RestoreONT" Height="30" Width="250" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
                             </Grid>
                         </TabItem>
                     </TabControl>
@@ -87,14 +87,20 @@
         </TabControl>
         <TextBox x:Name="loginField" HorizontalAlignment="Left" Margin="271,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="27" Foreground="#FF0094FF" Cursor="IBeam" FontFamily="Caladea"/>
         <TextBox x:Name="passField" HorizontalAlignment="Left" Margin="271,35,0,0" TextWrapping="Wrap" Width="120" Foreground="#FF0094FF" Height="23" VerticalAlignment="Top" FontFamily="Caladea" Cursor="IBeam"/>
-        <Label Content="Login" HorizontalAlignment="Left" Margin="197,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.249,0.604" Height="30" Width="69"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="197,35,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.253,-0.198" Height="23" Width="69"/>
-        <TextBox x:Name="ipField" HorizontalAlignment="Left" Margin="72,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="27" Foreground="#FF0094FF"/>
-        <Button x:Name="btnConnect" Content="Connect" HorizontalAlignment="Left" Margin="414,8,0,0" VerticalAlignment="Top" Click="Connect" Height="24" Width="86" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF226C53" Foreground="#FF0094FF"/>
-        <Button x:Name="btnDisconnect" Content="Disconnect" HorizontalAlignment="Left" Margin="505,8,0,0" VerticalAlignment="Top" Height="24" Width="104" Click="Disconnect" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF6C2222" Foreground="#FF0094FF"/>
-        <Button x:Name="btnRun" Content="Run" HorizontalAlignment="Left" Margin="414,33,0,0" VerticalAlignment="Top" Width="86" Height="23" Click="Run" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF226C53" Foreground="#FF0094FF"/>
-        <Button x:Name="btnClear" Content="Clear all" HorizontalAlignment="Left" Margin="505,34,0,0" VerticalAlignment="Top" Width="104" Height="22" Click="ClearAll" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF6C2222" Foreground="#FF0094FF"/>
-        <Label Content="Connection status" HorizontalAlignment="Left" Margin="1050,4,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="statusConnection" Content="" HorizontalAlignment="Left" Margin="1160,3,0,0" VerticalAlignment="Top" Foreground="#FF0094FF"/>
+        <Label Content="{DynamicResource lbl_Login}" HorizontalAlignment="Left" Margin="197,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.249,0.604" Height="30" Width="69"/>
+        <Label Content="{DynamicResource lbl_Password}" HorizontalAlignment="Left" Margin="197,35,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.253,-0.198" Height="23" Width="69"/>
+        <TextBox x:Name="ipField" HorizontalAlignment="Left" Margin="90,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Height="27" Foreground="#FF0094FF"/>
+        <Button x:Name="btnConnect" Content="{DynamicResource btn_Connect}" HorizontalAlignment="Left" Margin="414,8,0,0" VerticalAlignment="Top" Click="Connect" Height="24" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF226C53" Foreground="#FF0094FF" Width="84"/>
+        <Button x:Name="btnDisconnect" Content="{DynamicResource btn_Disconnect}" HorizontalAlignment="Left" Margin="505,8,0,0" VerticalAlignment="Top" Height="24" Width="102" Click="Disconnect" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF6C2222" Foreground="#FF0094FF"/>
+        <Button x:Name="btnRun" Content="{DynamicResource btn_Run}" HorizontalAlignment="Left" Margin="414,33,0,0" VerticalAlignment="Top" Height="23" Click="Run" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF226C53" Foreground="#FF0094FF" Width="84"/>
+        <Button x:Name="btnClear" Content="{DynamicResource btn_Clear}" HorizontalAlignment="Left" Margin="505,34,0,0" VerticalAlignment="Top" Width="102" Height="22" Click="ClearAll" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF6C2222" Foreground="#FF0094FF"/>
+        <Label Content="{DynamicResource lbl_ConnectStatus}" HorizontalAlignment="Left" Margin="623,11,0,0" VerticalAlignment="Top" Foreground="#FF0094FF"/>
+        <Label x:Name="statusConnection" Content="" HorizontalAlignment="Left" Margin="739,11,0,0" VerticalAlignment="Top" Foreground="#FF0094FF"/>
+        <Menu Name="menu" Width="1280" HorizontalAlignment="Right" Background="#FF3F3F3F" Height="28" VerticalAlignment="Top" Margin="0,-33,0,0" Grid.ColumnSpan="2">
+            <MenuItem x:Name="langItem" Header="Lang" Height="28">
+                <MenuItem x:Name="langRU" Header="RU" Click="ChangeLang"/>
+                <MenuItem x:Name="langEN" Header="EN" Click="ChangeLang"/>
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>

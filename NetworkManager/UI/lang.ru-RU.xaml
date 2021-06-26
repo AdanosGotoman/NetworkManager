@@ -1,0 +1,49 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+    <v:String x:Key="lbl_Title">SPD Toolkit</v:String>
+    <v:String x:Key="lbl_Port">Порт</v:String>
+    <v:String x:Key="lbl_Login">Логин</v:String>
+    <v:String x:Key="lbl_Password">Пароль</v:String>
+    <v:String x:Key="btn_Connect">Войти</v:String>
+    <v:String x:Key="btn_Disconnect">Выйти</v:String>
+    <v:String x:Key="btn_Run">Старт</v:String>
+    <v:String x:Key="btn_Clear">Очистить</v:String>
+    <v:String x:Key="lbl_ConnectStatus">Статус соединения</v:String>
+    <v:String x:Key="lbl_UserData">Тех. данные</v:String>
+    <v:String x:Key="lbl_Description">Описание</v:String>
+    <v:String x:Key="lbl_Serial">Сер. номер</v:String>
+    <v:String x:Key="lbl_TagVlanList">Тегированные VLAN</v:String>
+    <v:String x:Key="lbl_UntaggedVlan">Нетегированные VLAN</v:String>
+    <v:String x:Key="lbl_NativeVlan">Базовый VLAN</v:String>
+    <v:String x:Key="lbl_MCASTVlan">Multicast VLAN</v:String>
+    <v:String x:Key="lbl_LoopBackDetection">Слежка за петлями</v:String>
+
+    <v:String x:Key="tab_BaseMode">Базовый режим</v:String>
+    <v:String x:Key="tab_LogicMode">Логический режим</v:String>
+    <v:String x:Key="tab_Configs">Конфигурация</v:String>
+    <v:String x:Key="tab_ConfigEditMode">Конфигурирование</v:String>
+    <v:String x:Key="tab_AggregateDescr">Описание агрегации</v:String>
+    <v:String x:Key="tab_CableDiag">Диагностика кабеля</v:String>
+    <v:String x:Key="tab_State">Состояние</v:String>
+    <v:String x:Key="tab_ConnectHistory">История соединений</v:String>
+    <v:String x:Key="tab_ConnectStatus">Состояние соединений</v:String>
+    <v:String x:Key="tab_UnactivatedList">Список неактивных ONT</v:String>
+
+    <v:String x:Key="btn_UpdateConfig">Обновить конфигурацию</v:String>
+    <v:String x:Key="btn_UpdateState">Обновить состояние</v:String>
+    <v:String x:Key="btn_UpdateHistory">Обновить историю</v:String>
+    <v:String x:Key="btn_ShowOnPort">Показать на порту</v:String>
+    <v:String x:Key="btn_ShowOnSlot">Показать на слоту</v:String>
+    <v:String x:Key="btn_PhysXErrors">Показать физ. ошибки</v:String>
+    <v:String x:Key="btn_ConfigEditMode">Изменить</v:String>
+    <v:String x:Key="btn_InterfaceDescr">Показать описание портов</v:String>
+    <v:String x:Key="btn_AggregateSendDescr">Применить описание</v:String>
+    <v:String x:Key="btn_CloseConfigMode">Закрыть конфиг. режим</v:String>
+    <v:String x:Key="btn_CableDiag">Показать длину линии</v:String>
+    <v:String x:Key="btn_MacTable">Показать таблицу MAC</v:String>
+    <v:String x:Key="btn_VlanTable">Показать таблицу VLAN</v:String>
+    <v:String x:Key="btn_DeleteONT">Удалить</v:String>
+    <v:String x:Key="btn_RestoreONT">Сбросить</v:String>
+    
+</ResourceDictionary>

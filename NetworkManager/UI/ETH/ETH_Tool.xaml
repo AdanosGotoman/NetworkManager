@@ -12,43 +12,43 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="NetworkToolkit" Height="1024" Width="1280">
-    <Grid Background="#FF212121">
+    <Grid Background="#FF212121" Margin="0,40,0,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
         <Label Content="IP address" HorizontalAlignment="Left" Margin="0,6,0,0" VerticalAlignment="Top" Height="23" Width="70"/>
-        <Label Content="Port" HorizontalAlignment="Left" Margin="0,29,0,0" VerticalAlignment="Top" Height="23" Width="67"/>
+        <Label x:Name="lblPort" Content="{DynamicResource lbl_Port}" HorizontalAlignment="Left" Margin="0,29,0,0" VerticalAlignment="Top" Height="23" Width="67"/>
         <TextBox x:Name="userData" HorizontalAlignment="Left" Margin="72,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="26" Foreground="#FF0094FF"/>
         <TabControl Margin="0,60,0,0" Background="#FF212121">
-            <TabItem Header="Base configure mode" Background="#FF212121" Foreground="#FF0094FF">
+            <TabItem Header="{DynamicResource tab_BaseMode}" Background="#FF212121" Foreground="#FF0094FF">
                 <Grid>
                     <TabControl Background="#FF212121">
-                        <TabItem Header="Configuration" Background="#FF212121" Foreground="#FF0094FF">
+                        <TabItem Header="{DynamicResource tab_Configs}" Background="#FF212121" Foreground="#FF0094FF">
                             <Grid Background="#FF212121">
                                 <TextBox x:Name="configWND" TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" Margin="10,10,592,47" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow" FontFamily="Noto Mono"/>
-                                <Button x:Name="btnConfigUpdate" Content="Update configuration" Margin="10,0,0,16" Click="UpdateConfiguration" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="165" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <Button x:Name="btnConfigUpdate" Content="{DynamicResource btn_UpdateConfig}" Margin="10,0,0,16" Click="UpdateConfiguration" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="auto" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
                                 <TextBox x:Name="physxError" TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" Margin="681,10,10,47" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
-                                <Button x:Name="btnShowPhysxErr" Content="Show PhysX errors" Margin="681,0,0,16" Click="ShowPhysXErrors" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="159" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <Button x:Name="btnShowPhysxErr" Content="{DynamicResource btn_PhysXErrors}" Margin="681,0,0,16" Click="ShowPhysXErrors" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="auto" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="Configure terminal" Background="#FF212121" Foreground="#FF0094FF">
+                        <TabItem Header="{DynamicResource tab_ConfigEditMode}" Background="#FF212121" Foreground="#FF0094FF">
                             <Grid Background="#FF212121">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="193*"/>
                                     <ColumnDefinition Width="441*"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBox x:Name="configuringWND" TextWrapping="Wrap" Grid.Column="1" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Cursor="Arrow" Margin="0,10,10,10"/>
-                                <Label Content="User data" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="88" Foreground="#FF0094FF" Margin="0,14,0,0"/>
+                                <Label Content="{DynamicResource lbl_UserData}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="88" Foreground="#FF0094FF" Margin="0,14,0,0"/>
                                 <TextBox x:Name="configuringData" HorizontalAlignment="Left" Margin="93,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="26" Foreground="#FF0094FF"/>
                                 <TextBox x:Name="description" HorizontalAlignment="Left" Margin="93,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="26" Foreground="#FF0094FF"/>
-                                <Label Content="Description" HorizontalAlignment="Left" Margin="0,46,0,0" VerticalAlignment="Top" Height="26" Width="88" Foreground="#FF0094FF"/>
-                                <Label Content="Tagged VLAN list" HorizontalAlignment="Left" Margin="0,92,0,0" VerticalAlignment="Top" Height="23" Width="135" Foreground="#FF0094FF"/>
-                                <Label Content="Untagged VLAN" HorizontalAlignment="Left" Margin="0,120,0,0" VerticalAlignment="Top" Height="24" Width="135" Foreground="#FF0094FF"/>
-                                <Label Content="Native VLAN" HorizontalAlignment="Left" Margin="0,148,0,0" VerticalAlignment="Top" Height="23" Width="135" Foreground="#FF0094FF"/>
-                                <Label Content="Multicast VLAN" HorizontalAlignment="Left" Margin="-1,176,0,0" VerticalAlignment="Top" Height="23" Width="136" Foreground="#FF0094FF"/>
-                                <Label Content="Loopbacks detection" HorizontalAlignment="Left" Margin="0,204,0,0" VerticalAlignment="Top" Height="22" Width="135" Foreground="#FF0094FF"/>
-                                <Button x:Name="btnConfigTerminal" Content="Configure terminal" HorizontalAlignment="Left" Margin="230,10,0,0" VerticalAlignment="Top" Height="29" Click="ConfigureTerminal" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF" Width="151"/>
+                                <Label Content="{DynamicResource lbl_Description}" HorizontalAlignment="Left" Margin="0,46,0,0" VerticalAlignment="Top" Height="26" Width="88" Foreground="#FF0094FF"/>
+                                <Label Content="{DynamicResource lbl_TagVlanList}" HorizontalAlignment="Left" Margin="0,92,0,0" VerticalAlignment="Top" Height="23" Width="135" Foreground="#FF0094FF"/>
+                                <Label Content="{DynamicResource lbl_UntaggedVlan}" HorizontalAlignment="Left" Margin="0,120,0,0" VerticalAlignment="Top" Height="24" Width="135" Foreground="#FF0094FF"/>
+                                <Label Content="{DynamicResource lbl_NativeVlan}" HorizontalAlignment="Left" Margin="0,148,0,0" VerticalAlignment="Top" Height="23" Width="135" Foreground="#FF0094FF"/>
+                                <Label Content="{DynamicResource lbl_MCASTVlan}" HorizontalAlignment="Left" Margin="-1,176,0,0" VerticalAlignment="Top" Height="23" Width="136" Foreground="#FF0094FF"/>
+                                <Label Content="{DynamicResource lbl_LoopBackDetection}" HorizontalAlignment="Left" Margin="0,204,0,0" VerticalAlignment="Top" Height="22" Width="135" Foreground="#FF0094FF"/>
+                                <Button x:Name="btnConfigTerminal" Content="{DynamicResource btn_ConfigEditMode}" HorizontalAlignment="Left" Margin="230,10,0,0" VerticalAlignment="Top" Height="29" Click="ConfigureTerminal" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF" Width="151"/>
                                 <TextBox x:Name="pppoeVLAN" HorizontalAlignment="Left" Margin="140,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" Height="25" Foreground="#FF0094FF" Cursor="IBeam"/>
                                 <TextBox x:Name="nativeVLAN" HorizontalAlignment="Left" Margin="140,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" Height="25" Foreground="#FF0094FF"/>
                                 <TextBox x:Name="loopsVLAN" HorizontalAlignment="Left" Margin="140,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" Height="25" Foreground="#FF0094FF" Text="1299;1340;[_____];4040"/>
@@ -56,30 +56,26 @@
                                 <TextBox x:Name="taggedVLAN" HorizontalAlignment="Left" Margin="140,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" Height="25" Foreground="#FF0094FF" Cursor="IBeam" Text="1299;1340;4040"/>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="Aggregation descriptions" Background="#FF212121" Foreground="#FF0094FF">
+                        <TabItem Header="{DynamicResource tab_AggregateDescr}" Background="#FF212121" Foreground="#FF0094FF">
                             <Grid Background="#FF212121">
                                 <TextBox x:Name="interfacesDescrWND" HorizontalAlignment="Left" TextWrapping="Wrap" Width="620" Margin="10,10,0,46" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
-                                <Button x:Name="btnIntDesc" Content="Show interfaces description" HorizontalAlignment="Left" Margin="10,0,0,16" Height="26" VerticalAlignment="Bottom" Click="ShowInterfacesDescription" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <Button x:Name="btnIntDesc" Content="{DynamicResource btn_InterfaceDescr}" HorizontalAlignment="Left" Margin="10,0,0,16" Height="26" VerticalAlignment="Bottom" Click="ShowInterfacesDescription" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
                                 <TextBox x:Name="configWNDAggregate" HorizontalAlignment="Left" Margin="638,10,0,46" TextWrapping="Wrap" Width="620" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
-                                <Button x:Name="btnConfigAggregate" Content="Configure terminal" HorizontalAlignment="Left" Margin="638,0,0,15" Height="26" VerticalAlignment="Bottom" Click="ConfigureAggregate" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
-                                <TextBox x:Name="portFieldAggregate" HorizontalAlignment="Left" Margin="792,0,0,6" TextWrapping="Wrap" Width="33" Height="15" VerticalAlignment="Bottom"/>
-                                <TextBox x:Name="descAggr" HorizontalAlignment="Left" Margin="865,0,0,6" TextWrapping="Wrap" Width="103" Height="15" VerticalAlignment="Bottom"/>
-                                <Label Content="port" HorizontalAlignment="Left" Margin="792,0,0,16" Height="23" VerticalAlignment="Bottom"/>
-                                <Label Content="Description" HorizontalAlignment="Left" Margin="865,0,0,16" Height="23" VerticalAlignment="Bottom" Width="65"/>
-                                <Button x:Name="btnSendConfig" Content="Send description" HorizontalAlignment="Left" Margin="973,0,0,15" Width="140" Click="SendDescription" Height="25" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
-                                <Button x:Name="btnExit" Content="Close config mode" HorizontalAlignment="Left" Margin="1118,0,0,15" Height="25" VerticalAlignment="Bottom" Click="CloseConfig" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF" Width="150"/>
+                                <Button x:Name="btnConfigAggregate" Content="{DynamicResource btn_AggregateSendDescr}" HorizontalAlignment="Left" Margin="638,0,0,15" Height="26" VerticalAlignment="Bottom" Click="ConfigureAggregate" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <TextBox x:Name="portFieldAggregate" HorizontalAlignment="Left" Margin="833,0,0,16" TextWrapping="Wrap" Width="33" Height="25" VerticalAlignment="Bottom"/>
+                                <TextBox x:Name="descAggr" HorizontalAlignment="Left" Margin="907,0,0,16" TextWrapping="Wrap" Width="103" Height="25" VerticalAlignment="Bottom"/>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="Cable diagnostic" Background="#FF212121" Foreground="#FF0094FF">
+                        <TabItem Header="{DynamicResource tab_CableDiag}" Background="#FF212121" Foreground="#FF0094FF">
                             <Grid>
                                 <TextBox x:Name="cableTest" HorizontalAlignment="Center" Margin="0,10,0,47" TextWrapping="Wrap" Width="1248" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
-                                <Button x:Name="btnCableTest" Content="Show cable length" HorizontalAlignment="Left" Margin="10,0,0,10" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF" Width="150" Height="32" VerticalAlignment="Bottom" Click="DoCableTest"/>
+                                <Button x:Name="btnCableTest" Content="{DynamicResource btn_CableDiag}" HorizontalAlignment="Left" Margin="10,0,0,10" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF" Width="auto" Height="32" VerticalAlignment="Bottom" Click="DoCableTest"/>
                             </Grid>
                         </TabItem>
                     </TabControl>
                 </Grid>
             </TabItem>
-            <TabItem Header="Logic mode" Background="#FF212121" Foreground="#FF0094FF">
+            <TabItem Header="{DynamicResource tab_LogicMode}" Background="#FF212121" Foreground="#FF0094FF">
                 <Grid>
                     <TextBox x:Name="macTable" HorizontalAlignment="Left" Margin="10,10,0,47" TextWrapping="Wrap" Width="627" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
                     <Button x:Name="btnMacTable" Content="Show MAC table" HorizontalAlignment="Left" Margin="10,0,0,10" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF" Height="32" VerticalAlignment="Bottom" Click="ShowMacTable"/>
@@ -90,18 +86,24 @@
         </TabControl>
         <TextBox x:Name="loginField" HorizontalAlignment="Left" Margin="271,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="27" Foreground="#FF0094FF"/>
         <TextBox x:Name="passField" HorizontalAlignment="Left" Margin="271,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="26" Foreground="#FF0094FF" Cursor="IBeam"/>
-        <Label Content="Login" HorizontalAlignment="Left" Margin="197,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.249,0.604" Height="30" Width="69"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="197,29,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.253,-0.198" Height="23" Width="69"/>
+        <Label Content="{DynamicResource lbl_Login}" HorizontalAlignment="Left" Margin="197,6,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.249,0.604" Height="30" Width="69"/>
+        <Label Content="{DynamicResource lbl_Password}" HorizontalAlignment="Left" Margin="197,29,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.253,-0.198" Height="23" Width="69"/>
         <TextBox x:Name="ipField" HorizontalAlignment="Left" Margin="72,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="27" Foreground="#FF0094FF"/>
-        <Button x:Name="btnConnect" Content="Connect" HorizontalAlignment="Left" Margin="414,4,0,0" VerticalAlignment="Top" Click="Connect" Height="23" Width="86" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF226C53" Foreground="#FF0094FF"/>
-        <Button x:Name="btnDisconnect" Content="Disconnect" HorizontalAlignment="Left" Margin="508,4,0,0" VerticalAlignment="Top" Height="23" Width="104" Click="Disconnect" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF6C2222" Foreground="#FF0094FF"/>
-        <Button x:Name="btnRun" Content="Run" HorizontalAlignment="Left" Margin="414,30,0,0" VerticalAlignment="Top" Width="86" Height="23" Click="Run" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF226C53" Foreground="#FF0094FF"/>
-        <Button x:Name="btnClear" Content="Clear all" HorizontalAlignment="Left" Margin="508,30,0,0" VerticalAlignment="Top" Width="104" Height="23" Click="ClearAll" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF6C2222" Foreground="#FF0094FF"/>
+        <Button x:Name="btnConnect" Content="{DynamicResource btn_Connect}" HorizontalAlignment="Left" Margin="414,4,0,0" VerticalAlignment="Top" Click="Connect" Height="23" Width="86" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF226C53" Foreground="#FF0094FF"/>
+        <Button x:Name="btnDisconnect" Content="{DynamicResource btn_Disconnect}" HorizontalAlignment="Left" Margin="508,4,0,0" VerticalAlignment="Top" Height="23" Width="104" Click="Disconnect" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF6C2222" Foreground="#FF0094FF"/>
+        <Button x:Name="btnRun" Content="{DynamicResource btn_Run}" HorizontalAlignment="Left" Margin="414,30,0,0" VerticalAlignment="Top" Width="86" Height="23" Click="Run" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF226C53" Foreground="#FF0094FF"/>
+        <Button x:Name="btnClear" Content="{DynamicResource btn_Clear}" HorizontalAlignment="Left" Margin="508,30,0,0" VerticalAlignment="Top" Width="104" Height="23" Click="ClearAll" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF6C2222" Foreground="#FF0094FF"/>
         <CheckBox x:Name="faChck" Content="FastEthernet" HorizontalAlignment="Left" Margin="620,12,0,0" VerticalAlignment="Top" Foreground="#FF0094FF"/>
         <CheckBox x:Name="giChck" Content="GigabitEthernet" HorizontalAlignment="Left" Margin="620,37,0,0" VerticalAlignment="Top" Foreground="#FF0094FF"/>
         <CheckBox x:Name="ethChck" Content="Ethernet" HorizontalAlignment="Left" Margin="736,12,0,0" VerticalAlignment="Top" Foreground="#FF0094FF"/>
         <CheckBox x:Name="dlinkChck" Content="D-Link" HorizontalAlignment="Left" Margin="736,37,0,0" VerticalAlignment="Top" Foreground="#FF0094FF"/>
-        <Label Content="Connection status" HorizontalAlignment="Left" Margin="1050,4,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="statusConnection" Content="" HorizontalAlignment="Left" Margin="1160,3,0,0" VerticalAlignment="Top" Foreground="#FF0094FF"/>
+        <Label Content="{DynamicResource lbl_ConnectStatus}" HorizontalAlignment="Left" Margin="820,11,0,0" VerticalAlignment="Top" Foreground="#FF0094FF"/>
+        <Label x:Name="statusConnection" Content="" HorizontalAlignment="Left" Margin="946,11,0,0" VerticalAlignment="Top" Foreground="#FF0094FF"/>
+        <Menu Name="menu" Width="1280" HorizontalAlignment="Right" Background="#FF3F3F3F" Height="28" VerticalAlignment="Top" Margin="0,-33,0,0">
+            <MenuItem x:Name="langItem" Header="Lang" Height="28">
+                <MenuItem x:Name="langRU" Header="RU" Click="ChangeLang"/>
+                <MenuItem x:Name="langEN" Header="EN" Click="ChangeLang"/>
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>
