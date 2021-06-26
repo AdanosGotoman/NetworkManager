@@ -18,6 +18,10 @@
     <v:String x:Key="lbl_NativeVlan">Базовый VLAN</v:String>
     <v:String x:Key="lbl_MCASTVlan">Multicast VLAN</v:String>
     <v:String x:Key="lbl_LoopBackDetection">Слежка за петлями</v:String>
+    
+    <v:String x:Key="Tooltip_v1">перед тем, как ввести номер порта, войдите в режим interface gpon, введя данные в поле тех. данные</v:String>
+    <v:String x:Key="Tooltip_v2">Сюда вводится MAC адрес в формате xxxx-xxxx-xxxx</v:String>
+    <v:String x:Key="Tooltip_v3">Как и данные пользователя, это поле также содержит фрейм, слот, порт и ID. Разница в том, что КОМАНДА содержит слово ont перед ID. Поэтому, в первое поле пишутся frame/slot/port, во второе - ID</v:String>
 
     <v:String x:Key="tab_BaseMode">Базовый режим</v:String>
     <v:String x:Key="tab_LogicMode">Логический режим</v:String>
@@ -29,6 +33,9 @@
     <v:String x:Key="tab_ConnectHistory">История соединений</v:String>
     <v:String x:Key="tab_ConnectStatus">Состояние соединений</v:String>
     <v:String x:Key="tab_UnactivatedList">Список неактивных ONT</v:String>
+    <v:String x:Key="tab_AllONTList">Список всех ONT</v:String>
+    <v:String x:Key="tab_ONTOnSlot">ONT на слоту</v:String>
+    <v:String x:Key="tab_StateInfo">Информация о состоянии</v:String>
 
     <v:String x:Key="btn_UpdateConfig">Обновить конфигурацию</v:String>
     <v:String x:Key="btn_UpdateState">Обновить состояние</v:String>
@@ -45,5 +52,8 @@
     <v:String x:Key="btn_VlanTable">Показать таблицу VLAN</v:String>
     <v:String x:Key="btn_DeleteONT">Удалить</v:String>
     <v:String x:Key="btn_RestoreONT">Сбросить</v:String>
-    
+    <v:String x:Key="btn_SlotActivity">Активность на лоту</v:String>
+    <v:String x:Key="btn_SearchByMAC">Найти ONT по MAC</v:String>
+    <v:String x:Key="btn_ShowServicePorts">Показать сервис-порты</v:String>
+    <v:String x:Key="btn_ShowONTList">Показать список ONT</v:String>
 </ResourceDictionary>

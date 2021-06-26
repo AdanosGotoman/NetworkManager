@@ -19,6 +19,10 @@
     <v:String x:Key="lbl_MCASTVlan">Multicast VLAN</v:String>
     <v:String x:Key="lbl_LoopBackDetection">Loopback detection</v:String>
 
+    <v:String x:Key="Tooltip_v1">before entering the port number, enter the interface gpon mode by entering the data in the user data</v:String>
+    <v:String x:Key="Tooltip_v2">Here the mac address ont is entered in the form xxxx-xxxx-xxxx</v:String>
+    <v:String x:Key="Tooltip_v3">Like user data, this field also contains frame, slot, port and ID. The difference is that the COMMAND contains the word ont before the ID. Therefore, frame/slot/port is written in the first field, and ID in the second.</v:String>
+
     <v:String x:Key="tab_BaseMode">Base configure mode</v:String>
     <v:String x:Key="tab_LogicMode">Logic mode</v:String>
     <v:String x:Key="tab_Configs">Configuration</v:String>
@@ -29,6 +33,9 @@
     <v:String x:Key="tab_ConnectHistory">Connection history</v:String>
     <v:String x:Key="tab_ConnectStatus">Connection status</v:String>
     <v:String x:Key="tab_UnactivatedList">Unactivated ONT</v:String>
+    <v:String x:Key="tab_AllONTList">All ONT list</v:String>
+    <v:String x:Key="tab_ONTOnSlot">ONT on slot</v:String>
+    <v:String x:Key="tab_StateInfo">State info</v:String>
 
     <v:String x:Key="btn_UpdateConfig">Update configuration</v:String>
     <v:String x:Key="btn_UpdateState">Update state</v:String>
@@ -45,4 +52,8 @@
     <v:String x:Key="btn_VlanTable">Show VLAN table</v:String>
     <v:String x:Key="btn_DeleteONT">Delete</v:String>
     <v:String x:Key="btn_RestoreONT">Restore</v:String>
+    <v:String x:Key="btn_SlotActivity">Activity on slot</v:String>
+    <v:String x:Key="btn_SearchByMAC">Find ONT by MAC</v:String>
+    <v:String x:Key="btn_ShowServicePorts">Show service-ports</v:String>
+    <v:String x:Key="btn_ShowONTList">Show ONT list</v:String>
 </ResourceDictionary>

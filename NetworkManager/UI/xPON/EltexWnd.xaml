@@ -12,7 +12,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="NetworkToolkit" Height="1024" Width="1280">
-    <Grid Background="#FF212121" Margin="0,40,0,0">
+    <Grid Background="#FF212121" Margin="0,40,0,0" Cursor="IBeam">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>

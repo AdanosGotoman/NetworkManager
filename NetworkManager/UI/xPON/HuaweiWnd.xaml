@@ -12,66 +12,65 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="NetworkToolkit" Height="1024" Width="1280">
-    <Grid Background="#FF212121">
+    <Grid Background="#FF212121" Margin="0,40,0,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Label Content="IP address" HorizontalAlignment="Left" VerticalAlignment="Top" Height="23" Width="70"/>
-        <Label Content="User data" HorizontalAlignment="Left" Margin="0,29,0,0" VerticalAlignment="Top" Height="23" Width="67"/>
-        <TextBox x:Name="userData" HorizontalAlignment="Left" Margin="72,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="24" Foreground="#FF0094FF" ToolTip="frame/slot/port ID. There MUST be a space after the port number." Cursor="IBeam"/>
+        <Label Content="IP address" HorizontalAlignment="Left" VerticalAlignment="Top" Height="23" Width="85"/>
+        <Label Content="{DynamicResource lbl_UserData}" HorizontalAlignment="Left" Margin="0,29,0,0" VerticalAlignment="Top" Height="23" Width="85"/>
+        <TextBox x:Name="userData" HorizontalAlignment="Left" Margin="90,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Height="24" Foreground="#FF0094FF" ToolTip="frame/slot/port ID. There MUST be a space after the port number." Cursor="IBeam"/>
         <TabControl Margin="0,58,0,0" Background="#FF3F3F3F">
             <TabItem Header="xPON" Background="#FF3F3F3F" Foreground="#FF0094FF">
                 <Grid Background="#FF212121">
                     <TabControl Background="#FF3F3F3F">
-                        <TabItem Header="Configuration" Background="#FF3F3F3F" Foreground="#FF0094FF">
+                        <TabItem Header="{DynamicResource tab_Configs}" Background="#FF3F3F3F" Foreground="#FF0094FF">
                             <Grid Background="#FF212121">
                                 <TextBox x:Name="configWND" TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" Margin="10,10,648,379"  Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
-                                <Button x:Name="btnConfigUpdate" Content="Update configuration" Margin="10,0,0,348" Click="UpdateConfiguration" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="166" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <Button x:Name="btnConfigUpdate" Content="{DynamicResource btn_UpdateConfig}" Margin="10,0,0,348" Click="UpdateConfiguration" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="auto" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
                                 <TextBox x:Name="servicePortsList" TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" Margin="649,10,10,379"  Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
-                                <Button x:Name="btnSrvPortsList" Content="Show service ports" Margin="649,0,0,348" Click="ShowSrvPortsList" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="166" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
-                                <TextBox x:Name="dataForSrvPorts" HorizontalAlignment="Left" Margin="825,0,0,348" TextWrapping="Wrap" Width="80" Height="25" VerticalAlignment="Bottom" ToolTip="As with User data, it also contains frame, slot, port and ID. The difference is that the command contains the word 'ont' before the ID."/>
-                                <TextBox x:Name="ontID" HorizontalAlignment="Left" Margin="911,0,0,348" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="38" Height="25"/>
+                                <Button x:Name="btnSrvPortsList" Content="{DynamicResource btn_ShowServicePorts}" Margin="649,0,0,348" Click="ShowSrvPortsList" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="auto" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <TextBox x:Name="dataForSrvPorts" HorizontalAlignment="Left" Margin="1134,0,0,348" TextWrapping="Wrap" Width="80" Height="25" VerticalAlignment="Bottom" ToolTip="{DynamicResource Tooltip_v3}"/>
+                                <TextBox x:Name="ontID" HorizontalAlignment="Left" Margin="1220,0,0,348" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="38" Height="25"/>
                                 <TextBox x:Name="macTable" TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" Margin="10,0,648,43"  Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow" Height="300" VerticalAlignment="Bottom"/>
-                                <Button x:Name="btnShowMAC" Content="Show MAC table" Margin="10,0,0,12" Click="ShowMacTable" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="166" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
-                                <TextBox x:Name="dataForMAC" HorizontalAlignment="Left" Margin="186,0,0,13" TextWrapping="Wrap" Width="80" Height="25" VerticalAlignment="Bottom" ToolTip="As with User data, it also contains frame, slot, port and ID. The difference is that the command contains the word 'ont' before the ID." Cursor="IBeam"/>
-                                <TextBox x:Name="macID" HorizontalAlignment="Left" Margin="281,0,0,13" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="38" Height="25"/>
+                                <Button x:Name="btnShowMAC" Content="{DynamicResource btn_MacTable}" Margin="10,0,0,12" Click="ShowMacTable" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="auto" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <TextBox x:Name="dataForMAC" HorizontalAlignment="Left" Margin="487,0,0,13" TextWrapping="Wrap" Width="80" Height="25" VerticalAlignment="Bottom" ToolTip="As with User data, it also contains frame, slot, port and ID. The difference is that the command contains the word 'ont' before the ID." Cursor="IBeam"/>
+                                <TextBox x:Name="macID" HorizontalAlignment="Left" Margin="582,0,0,13" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="38" Height="25"/>
                                 <TextBox x:Name="searchByMac" TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" Margin="649,0,10,43"  Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow" Height="300" VerticalAlignment="Bottom"/>
-                                <Button x:Name="btnSearchbyMAC" Content="Show ONT by MAC" Margin="649,0,0,12" Click="ShowONTByMAC" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="166" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
-                                <TextBox x:Name="macAddress" HorizontalAlignment="Left" Margin="835,0,0,13" TextWrapping="Wrap" Width="202" Height="25" VerticalAlignment="Bottom" ToolTip="Here the mac address ont is entered in the form xxxx-xxxx-xxxx"/>
+                                <Button x:Name="btnSearchbyMAC" Content="{DynamicResource btn_SearchByMAC}" Margin="649,0,0,12" Click="ShowONTByMAC" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="auto" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <TextBox x:Name="macAddress" HorizontalAlignment="Left" Margin="1056,0,0,13" TextWrapping="Wrap" Width="202" Height="25" VerticalAlignment="Bottom" ToolTip="{DynamicResource Tooltip_v2}"/>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="State" Background="#FF3F3F3F" Foreground="#FF0094FF">
+                        <TabItem Header="{DynamicResource tab_State}" Background="#FF3F3F3F" Foreground="#FF0094FF">
                             <Grid Background="#FF212121">
                                 <TextBox x:Name="stateWND" TextWrapping="Wrap" Margin="10,10,639,46" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
-                                <Button x:Name="btnUpdateState" Content="Update state" HorizontalAlignment="Left" Margin="10,0,0,15" Click="UpdateState" Height="26" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <Button x:Name="btnUpdateState" Content="{DynamicResource btn_UpdateState}" HorizontalAlignment="Left" Margin="10,0,0,15" Click="UpdateState" Height="26" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
                                 <TextBox x:Name="stateWNDbyPort" TextWrapping="Wrap" Margin="634,10,10,46" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
-                                <Button x:Name="btnUpdateStateByPort" Content="Update state" HorizontalAlignment="Left" Margin="634,0,0,15" Click="UpdateStateByPort" Height="26" VerticalAlignment="Bottom" ToolTip="before entering the port number, enter the gpon interface mode in User data field" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
-                                <TextBox x:Name="portField" Margin="762,0,0,15" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="120" Height="25"/>
-                                <Label Content="(port number)" HorizontalAlignment="Left" Margin="896,0,0,15" Height="23" VerticalAlignment="Bottom"/>
+                                <Button x:Name="btnUpdateStateByPort" Content="{DynamicResource btn_UpdateState}" HorizontalAlignment="Left" Margin="634,0,0,15" Click="UpdateStateByPort" Height="26" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <TextBox x:Name="portField" Margin="1138,0,0,16" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="120" Height="25" ToolTip="{DynamicResource Tooltip_v1}"/>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="All ONT list" Background="#FF3F3F3F" Foreground="#FF0094FF">
+                        <TabItem Header="{DynamicResource tab_AllONTList}" Background="#FF3F3F3F" Foreground="#FF0094FF">
                             <Grid Background="#FF212121">
                                 <TextBox x:Name="ontListAutofind" TextWrapping="Wrap" Margin="10,10,10,46" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
-                                <Button x:Name="btnShowAllONT" Content="Show ONT list" HorizontalAlignment="Left" Margin="10,0,0,15" Click="AutofindAllONT" Height="26" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <Button x:Name="btnShowAllONT" Content="{DynamicResource btn_ShowONTList}" HorizontalAlignment="Left" Margin="10,0,0,15" Click="AutofindAllONT" Width="auto" Height="26" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="ONT list by slot" Background="#FF3F3F3F" Foreground="#FF0094FF">
+                        <TabItem Header="{DynamicResource tab_ONTOnSlot}" Background="#FF3F3F3F" Foreground="#FF0094FF">
                             <Grid Background="#FF212121">
                                 <TextBox x:Name="ontListBySlot" TextWrapping="Wrap" Margin="10,10,10,41" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
-                                <Button x:Name="btnListBySlot" Content="Show ONT list" HorizontalAlignment="Left" Margin="10,0,0,10" Height="26" VerticalAlignment="Bottom" Click="ShowListONTBySlot" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF" Width="128"/>
-                                <TextBox x:Name="slotNumber" HorizontalAlignment="Left" Margin="164,0,0,10" TextWrapping="Wrap" Width="49" Height="25" VerticalAlignment="Bottom"/>
+                                <Button x:Name="btnListBySlot" Content="{DynamicResource btn_ShowONTList}" HorizontalAlignment="Left" Margin="10,0,0,10" Height="26" VerticalAlignment="Bottom" Click="ShowListONTBySlot" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF" Width="auto"/>
+                                <TextBox x:Name="slotNumber" HorizontalAlignment="Left" Margin="215,0,0,10" TextWrapping="Wrap" Width="49" Height="25" VerticalAlignment="Bottom"/>
                             </Grid>
                         </TabItem>
-                        <TabItem Header="State info" Background="#FF3F3F3F" Foreground="#FF0094FF">
+                        <TabItem Header="{DynamicResource tab_StateInfo}" Background="#FF3F3F3F" Foreground="#FF0094FF">
                             <Grid Background="#FF212121">
                                 <TextBox x:Name="infoTable" TextWrapping="Wrap" Margin="10,10,639,41" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
-                                <Button x:Name="btnConnectState" Content="Show connection state" HorizontalAlignment="Left" Margin="10,0,0,10" Click="ShowInfoBySlot" Height="26" VerticalAlignment="Bottom"  Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
-                                <TextBox x:Name="ontSlot" HorizontalAlignment="Left" Margin="196,0,0,10" TextWrapping="Wrap" Width="48" Height="20" VerticalAlignment="Bottom"/>
+                                <Button x:Name="btnConnectState" Content="{DynamicResource btn_SlotActivity}" HorizontalAlignment="Left" Margin="10,0,0,10" Click="ShowInfoBySlot" Height="26" VerticalAlignment="Bottom"  Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <TextBox x:Name="ontSlot" HorizontalAlignment="Left" Margin="196,0,0,10" TextWrapping="Wrap" Width="48" Height="26" VerticalAlignment="Bottom"/>
                                 <TextBox x:Name="connectionHistory" TextWrapping="Wrap" Margin="634,10,10,41" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
-                                <Button x:Name="btnConnectHistory" Content="Show connection history" HorizontalAlignment="Left" Margin="634,0,0,10" Click="ShowConnectionHistory" Height="26" VerticalAlignment="Bottom"  Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
-                                <TextBox x:Name="port_id" HorizontalAlignment="Left" Margin="834,0,0,10" TextWrapping="Wrap" Width="48" Height="20" VerticalAlignment="Bottom"/>
+                                <Button x:Name="btnConnectHistory" Content="{DynamicResource btn_UpdateHistory}" HorizontalAlignment="Left" Margin="634,0,0,10" Click="ShowConnectionHistory" Height="26" VerticalAlignment="Bottom"  Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
+                                <TextBox x:Name="port_id" HorizontalAlignment="Left" Margin="834,0,0,10" TextWrapping="Wrap" Width="48" Height="26" VerticalAlignment="Bottom"/>
                             </Grid>
                         </TabItem>
                     </TabControl>
@@ -80,7 +79,7 @@
             <TabItem Header="xDSL" Background="#FF3F3F3F" Foreground="#FF0094FF">
                 <Grid Background="#FF212121">
                     <TabControl Background="#FF3F3F3F">
-                        <TabItem Header="Base configuration" Background="#FF3F3F3F" Foreground="#FF0094FF">
+                        <TabItem Header="{DynamicResource tab_BaseMode}" Background="#FF3F3F3F" Foreground="#FF0094FF">
                             <Grid Background="#FF212121">
                                 <TextBox x:Name="profilesWND" TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" Margin="10,10,746,41"  Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
                                 <Button x:Name="btnProfilesList" Content="Show profile list" Margin="10,0,0,10" Click="UpdateProfiles" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="166" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Hand"/>
@@ -88,23 +87,28 @@
                                 <Button x:Name="btnLineParams" Content="Show profile list" Margin="540,0,0,10" Click="UpdateLineParams" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="166" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Hand"/>
                             </Grid>
                         </TabItem>
-
                     </TabControl>
                 </Grid>
             </TabItem>
         </TabControl>
         <TextBox x:Name="loginField" HorizontalAlignment="Left" Margin="271,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="29" Foreground="#FF0094FF" Cursor="IBeam"/>
         <TextBox x:Name="passField" HorizontalAlignment="Left" Margin="271,29,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="24" Foreground="#FF0094FF" Cursor="IBeam"/>
-        <Label Content="Login" HorizontalAlignment="Left" Margin="197,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.249,0.604" Height="23" Width="69"/>
-        <Label Content="Password" HorizontalAlignment="Left" Margin="197,29,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.253,-0.198" Height="23" Width="69"/>
-        <TextBox x:Name="ipField" HorizontalAlignment="Left" Margin="72,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="29" Foreground="#FF0094FF" Cursor="IBeam"/>
-        <Button x:Name="btnConnect" Content="Connect" HorizontalAlignment="Left" Margin="414,5,0,0" VerticalAlignment="Top" Click="Connect" Height="24" Width="86" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF226C53" Foreground="#FF0094FF"/>
-        <Button x:Name="btnDisconnect" Content="Disconnect" HorizontalAlignment="Left" Margin="505,5,0,0" VerticalAlignment="Top" Height="24" Width="104" Click="Disconnect" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF6C2222" Foreground="#FF0094FF"/>
-        <Button x:Name="btnRun" Content="Run" HorizontalAlignment="Left" Margin="414,30,0,0" VerticalAlignment="Top" Width="86" Height="23" Click="Run" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF226C53" Foreground="#FF0094FF"/>
-        <Button x:Name="btnClear" Content="Clear all" HorizontalAlignment="Left" Margin="505,31,0,0" VerticalAlignment="Top" Width="104" Height="22" Click="ClearAll" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF6C2222" Foreground="#FF0094FF"/>
+        <Label Content="{DynamicResource lbl_Login}" HorizontalAlignment="Left" Margin="197,0,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.249,0.604" Height="23" Width="69"/>
+        <Label Content="{DynamicResource lbl_Password}" HorizontalAlignment="Left" Margin="197,29,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.253,-0.198" Height="23" Width="69"/>
+        <TextBox x:Name="ipField" HorizontalAlignment="Left" Margin="90,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Height="29" Foreground="#FF0094FF" Cursor="IBeam"/>
+        <Button x:Name="btnConnect" Content="{DynamicResource btn_Connect}" HorizontalAlignment="Left" Margin="414,5,0,0" VerticalAlignment="Top" Click="Connect" Height="24" Width="86" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF226C53" Foreground="#FF0094FF"/>
+        <Button x:Name="btnDisconnect" Content="{DynamicResource btn_Disconnect}" HorizontalAlignment="Left" Margin="505,5,0,0" VerticalAlignment="Top" Height="24" Width="104" Click="Disconnect" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF6C2222" Foreground="#FF0094FF"/>
+        <Button x:Name="btnRun" Content="{DynamicResource btn_Run}" HorizontalAlignment="Left" Margin="414,30,0,0" VerticalAlignment="Top" Width="86" Height="23" Click="Run" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF226C53" Foreground="#FF0094FF"/>
+        <Button x:Name="btnClear" Content="{DynamicResource btn_Clear}" HorizontalAlignment="Left" Margin="505,31,0,0" VerticalAlignment="Top" Width="104" Height="22" Click="ClearAll" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF6C2222" Foreground="#FF0094FF"/>
         <CheckBox x:Name="chckPON" Content="xPON" HorizontalAlignment="Left" Margin="634,8,0,0" VerticalAlignment="Top" Foreground="#FF0094FF"/>
         <CheckBox x:Name="chckDSL" Content="xDSL" HorizontalAlignment="Left" Margin="634,34,0,0" VerticalAlignment="Top" Foreground="#FF0094FF"/>
-        <Label Content="Connection status" HorizontalAlignment="Left" Margin="1050,4,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="statusConnection" Content="" HorizontalAlignment="Left" Margin="1160,3,0,0" VerticalAlignment="Top" Foreground="#FF0094FF" Height="22"/>
+        <Label Content="Connection status" HorizontalAlignment="Left" Margin="704,7,0,0" VerticalAlignment="Top" Foreground="#FF0094FF"/>
+        <Label x:Name="statusConnection" Content="" HorizontalAlignment="Left" Margin="816,7,0,0" VerticalAlignment="Top" Foreground="#FF0094FF" Height="22"/>
+        <Menu Name="menu" Width="1280" HorizontalAlignment="Right" Background="#FF3F3F3F" Height="28" VerticalAlignment="Top" Margin="0,-33,0,0">
+            <MenuItem x:Name="langItem" Header="Lang" Height="28">
+                <MenuItem x:Name="langRU" Header="RU" Click="ChangeLang"/>
+                <MenuItem x:Name="langEN" Header="EN" Click="ChangeLang"/>
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>

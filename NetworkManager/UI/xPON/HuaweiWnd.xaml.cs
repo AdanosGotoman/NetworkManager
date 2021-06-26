@@ -1,7 +1,9 @@
 ﻿using NetworkManager.TelnetCore;
 using System;
+using System.Globalization;
 using System.IO;
 using System.Windows;
+using System.Windows.Controls;
 using ToolkitUI.TelnetCore;
 
 namespace NetworkManager.UI.xPON
@@ -12,6 +14,42 @@ namespace NetworkManager.UI.xPON
         {
             InitializeComponent();
             WindowState = WindowState.Maximized;
+            App.LangChanged += LangChanged;
+            CultureInfo currLang = App.Lang;
+
+            langItem.Items.Clear();
+            foreach (var lang in App.Langs)
+            {
+                MenuItem menulang = new MenuItem();
+                menulang.Header = lang.DisplayName;
+                menulang.Tag = lang;
+                menulang.IsChecked = lang.Equals(currLang);
+                menulang.Click += ChangeLang;
+                langItem.Items.Add(menulang);
+            }
+        }
+
+        public void ChangeLang(object sender, RoutedEventArgs e)
+        {
+            langItem = sender as MenuItem;
+
+            if (langItem != null)
+            {
+                CultureInfo lang = langItem.Tag as CultureInfo;
+                if (lang != null)
+                    App.Lang = lang;
+            }
+        }
+
+        private void LangChanged(object sender, EventArgs e)
+        {
+            CultureInfo currLang = App.Lang;
+
+            foreach (MenuItem langItem in menu.Items)
+            {
+                CultureInfo info = langItem.Tag as CultureInfo;
+                langItem.IsChecked = info != null && info.Equals(currLang);
+            }
         }
 
         TelnetCommander commander;
