@@ -19,6 +19,11 @@
     <v:String x:Key="lbl_MCASTVlan">Multicast VLAN</v:String>
     <v:String x:Key="lbl_LoopBackDetection">Loopback detection</v:String>
 
+    <v:String x:Key="menu_File">File</v:String>
+    <v:String x:Key="menu_Lang">Lang</v:String>
+    <v:String x:Key="menu_LangItem">English</v:String>
+    <v:String x:Key="menu_LoginItem">Login with CENTRUM</v:String>
+
     <v:String x:Key="Tooltip_v1">before entering the port number, enter the interface gpon mode by entering the data in the user data</v:String>
     <v:String x:Key="Tooltip_v2">Here the mac address ont is entered in the form xxxx-xxxx-xxxx</v:String>
     <v:String x:Key="Tooltip_v3">Like user data, this field also contains frame, slot, port and ID. The difference is that the COMMAND contains the word ont before the ID. Therefore, frame/slot/port is written in the first field, and ID in the second.</v:String>

@@ -3,6 +3,8 @@ using System.Text;
 using System.Net.Sockets;
 using System.Threading;
 using System.Windows;
+using NetworkManager.UI;
+using System.Threading.Tasks;
 
 namespace ToolkitUI.TelnetCore
 {
@@ -26,7 +28,8 @@ namespace ToolkitUI.TelnetCore
 
         public Telnet(string Hostname, int Port)
         {
-            tcpSocket = new TcpClient(Hostname, Port);
+            try { tcpSocket = new TcpClient(Hostname, Port); }
+            catch (Exception exc) { MessageBox.Show("Error: " + exc.Message); return; }
         }
 
         public string Login(string Username, string Password, int LoginTimeOutMs)
@@ -35,44 +38,34 @@ namespace ToolkitUI.TelnetCore
             TimeOutMs = LoginTimeOutMs;
             string s = Read();
 
-            SendCommand(Username);
-            s += Read();
+            try
+            {
+                SendCommand(Username);
+                s += Read();
 
-            SendCommand(Password);
-            s += Read();
+                SendCommand(Password);
+                s += Read();
 
-            TimeOutMs = oldTimeOutMs;
+                TimeOutMs = oldTimeOutMs;
+            }
+            catch (Exception exc) { MessageBox.Show("Error: " + exc.Message); }
+
             return s;
         }
 
-        public string Disconnect(string command)
-        {
-            command = Read();
-            SendCommand("exit");
-            command += Read();
-
-            return command;
-        }
-
-        public void SendCommand(string cmd)
-        {
-            Write(cmd + "\n");
-        }
+        public void SendCommand(string cmd) => Write(cmd + "\n");
 
         public void Write(string cmd)
         {
             if (!tcpSocket.Connected) return;
+
             byte[] buf = Encoding.ASCII.GetBytes(cmd.Replace("\0xFF", "\0xFF\0xFF"));
             tcpSocket.GetStream().Write(buf, 0, buf.Length);
         }
 
         public string Read()
         {
-            if (!tcpSocket.Connected)
-            {
-                MessageBox.Show("Socket is not connected... Retry connect to session.");
-                return null;
-            }              
+            if (!tcpSocket.Connected) return null;
 
             StringBuilder sb = new StringBuilder();
             do

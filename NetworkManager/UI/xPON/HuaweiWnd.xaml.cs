@@ -55,7 +55,6 @@ namespace NetworkManager.UI.xPON
         TelnetCommander commander;
         Telnet telnet;
         TextWriter writer;
-        string auth;
 
         private void Connect(object sender, RoutedEventArgs e)
         {
@@ -66,8 +65,17 @@ namespace NetworkManager.UI.xPON
             commander = new TelnetCommander(ip);
             telnet = commander.GetTelnet();
 
-            auth = telnet.Login(login, password, 1200);
-            statusConnection.Content = "Connected";
+            try { telnet.Login(login, password, 1000); }
+            catch (Exception exc)
+            {
+                if (telnet.IsConnected)
+                    statusConnection.Content = "Connected";
+                else
+                {
+                    statusConnection.Content = "Connection ERROR";
+                    MessageBox.Show("Error: " + exc.Message);
+                }
+            }
         }
 
         private void Disconnect(object sender, RoutedEventArgs e)

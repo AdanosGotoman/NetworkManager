@@ -105,8 +105,11 @@
         <Label Content="Connection status" HorizontalAlignment="Left" Margin="704,7,0,0" VerticalAlignment="Top" Foreground="#FF0094FF"/>
         <Label x:Name="statusConnection" Content="" HorizontalAlignment="Left" Margin="816,7,0,0" VerticalAlignment="Top" Foreground="#FF0094FF" Height="22"/>
         <Menu Name="menu" Width="1280" HorizontalAlignment="Right" Background="#FF3F3F3F" Height="28" VerticalAlignment="Top" Margin="0,-33,0,0">
-            <MenuItem x:Name="langItem" Header="Lang" Height="28">
-                <MenuItem x:Name="langRU" Header="RU" Click="ChangeLang"/>
+            <MenuItem x:Name="fileItem" Header="{DynamicResource menu_File}" Height="28">
+                <MenuItem x:Name="centrumLogin" Header="{DynamicResource menu_LoginItem}"/>
+            </MenuItem>
+            <MenuItem x:Name="langItem" Header="{DynamicResource menu_Lang}" Height="28">
+                <MenuItem x:Name="langRU" Header="{DynamicResource menu_LangItem}" Click="ChangeLang"/>
                 <MenuItem x:Name="langEN" Header="EN" Click="ChangeLang"/>
             </MenuItem>
         </Menu>

@@ -19,6 +19,11 @@
     <v:String x:Key="lbl_MCASTVlan">Multicast VLAN</v:String>
     <v:String x:Key="lbl_LoopBackDetection">Слежка за петлями</v:String>
     
+    <v:String x:Key="menu_File">Файл</v:String>
+    <v:String x:Key="menu_Lang">Язык</v:String>
+    <v:String x:Key="menu_LangItem">Русский</v:String>
+    <v:String x:Key="menu_LoginItem">Вход через CENTRUM</v:String>
+
     <v:String x:Key="Tooltip_v1">перед тем, как ввести номер порта, войдите в режим interface gpon, введя данные в поле тех. данные</v:String>
     <v:String x:Key="Tooltip_v2">Сюда вводится MAC адрес в формате xxxx-xxxx-xxxx</v:String>
     <v:String x:Key="Tooltip_v3">Как и данные пользователя, это поле также содержит фрейм, слот, порт и ID. Разница в том, что КОМАНДА содержит слово ont перед ID. Поэтому, в первое поле пишутся frame/slot/port, во второе - ID</v:String>

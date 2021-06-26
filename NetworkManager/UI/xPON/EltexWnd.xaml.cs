@@ -2,6 +2,9 @@
 using System;
 using System.Globalization;
 using System.IO;
+using System.Net.Sockets;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using ToolkitUI.TelnetCore;
@@ -13,10 +16,9 @@ namespace NetworkManager.UI.xPON
         TelnetCommander commander;
         Telnet telnet;
         TextWriter writer;
-        string auth;
 
-        public EltexWnd() 
-        { 
+        public EltexWnd()
+        {
             InitializeComponent(); 
             WindowState = WindowState.Maximized;
             App.LangChanged += LangChanged;
@@ -66,8 +68,49 @@ namespace NetworkManager.UI.xPON
             commander = new TelnetCommander(ip);
             telnet = commander.GetTelnet();
 
-            auth = telnet.Login(login, password, 1000);
-            statusConnection.Content = "Connected";
+            try  { telnet.Login(login, password, 1000); }
+            catch (Exception exc) 
+            {
+                if (telnet.IsConnected)
+                    statusConnection.Content = "Connected";
+                else
+                {
+                    statusConnection.Content = "Connection ERROR";
+                    MessageBox.Show("Error: " + exc.Message);
+                }
+            }
+        }
+
+        public async Task DetectConnectionLoop()
+        {
+            byte[] buffer = new byte[1];
+            ArraySegment<byte> arrSegment = new ArraySegment<byte>(buffer, 0, 0);
+            SocketFlags flags = SocketFlags.None;
+
+            CancellationTokenSource src = new CancellationTokenSource();
+
+            Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
+            while (!src.Token.IsCancellationRequested)
+            {
+                try
+                {
+                    await socket.SendAsync(arrSegment, flags);
+                    await Task.Delay(500);
+                }
+                catch (Exception exc)
+                {
+                    src.Cancel();
+                    MessageBox.Show("Error: " + exc.Message);
+
+                    Application.Current.Windows[0].Close();
+                    Selector wnd = new Selector();
+                    wnd.Show();
+                    MessageBox.Show("Please, retry connecting with Centrum");
+
+                    return;
+                }
+            }
         }
 
         private void Disconnect(object sender, RoutedEventArgs e)
@@ -131,7 +174,10 @@ namespace NetworkManager.UI.xPON
         {
             string dataSlot = slot.Text;
 
-            commander.ShowUnactivatedEltex(dataSlot);
+            if (dataSlot.Contains("9"))
+                MessageBox.Show("MA4000 doesn't contains more 8 slots");
+            else
+                commander.ShowUnactivatedEltex(dataSlot);
 
             writer = new RedirectOutput(unactivatedSlot);
             Console.SetOut(writer);
@@ -142,7 +188,10 @@ namespace NetworkManager.UI.xPON
         {
             string dataSlotPort = slot_port.Text;
 
-            commander.ShowUnactivatedEltex(dataSlotPort);
+            if (dataSlotPort.Contains("1/8"))
+                MessageBox.Show("MA4000 doesn't contains more 8 ports");
+            else
+                commander.ShowUnactivatedEltex(dataSlotPort);
 
             writer = new RedirectOutput(unactivatedSlotPort);
             Console.SetOut(writer);

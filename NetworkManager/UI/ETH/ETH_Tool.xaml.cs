@@ -66,12 +66,17 @@ namespace NetworkManager
             commander = new TelnetCommander(ip);
             telnet = commander.GetTelnet();
 
-            telnet.Login(login, password, 1200);
-
-            if (telnet.IsConnected)
-                statusConnection.Content = "Connected";
-            else
-                statusConnection.Content = "Connection Error";
+            try { telnet.Login(login, password, 1000); }
+            catch (Exception exc)
+            {
+                if (telnet.IsConnected)
+                    statusConnection.Content = "Connected";
+                else
+                {
+                    statusConnection.Content = "Connection ERROR";
+                    MessageBox.Show("Error: " + exc.Message);
+                }
+            }
         }
 
         private void Disconnect(object sender, RoutedEventArgs e)
@@ -276,6 +281,11 @@ namespace NetworkManager
             writer = new RedirectOutput(configWNDAggregate);
             Console.SetOut(writer);
             Console.WriteLine(telnet.Read());
+        }
+
+        private void LoginCentrum(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
