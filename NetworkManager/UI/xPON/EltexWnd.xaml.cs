@@ -19,7 +19,7 @@ namespace NetworkManager.UI.xPON
 
         public EltexWnd()
         {
-            InitializeComponent(); 
+            InitializeComponent();
             WindowState = WindowState.Maximized;
             App.LangChanged += LangChanged;
             CultureInfo currLang = App.Lang;
@@ -68,8 +68,8 @@ namespace NetworkManager.UI.xPON
             commander = new TelnetCommander(ip);
             telnet = commander.GetTelnet();
 
-            try  { telnet.Login(login, password, 1000); }
-            catch (Exception exc) 
+            try { telnet.Login(login, password, 1000); }
+            catch (Exception exc)
             {
                 if (telnet.IsConnected)
                     statusConnection.Content = "Connected";

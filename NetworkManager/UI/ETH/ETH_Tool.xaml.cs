@@ -199,7 +199,7 @@ namespace NetworkManager
                 commander.SendCommand("write");
                 commander.SendCommand("y\n");
             }
-                
+
             else if ((bool)giChck.IsChecked)
                 commander.SendCommand("interface gigabitethernet1/0/" + configuringData.Text);
 

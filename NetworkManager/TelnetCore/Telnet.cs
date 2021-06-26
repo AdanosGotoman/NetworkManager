@@ -3,8 +3,6 @@ using System.Text;
 using System.Net.Sockets;
 using System.Threading;
 using System.Windows;
-using NetworkManager.UI;
-using System.Threading.Tasks;
 
 namespace ToolkitUI.TelnetCore
 {
