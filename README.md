@@ -32,6 +32,11 @@ v 0.9.9
 - added connection status label
 - other UI fixes
 
+v 0.9.9.1
+- added en/ru localizations
+- remove old and trash code
+- added configuring port mode for MES switches
+
 # Used libs
 https://github.com/SuperTao/Telnet
 
