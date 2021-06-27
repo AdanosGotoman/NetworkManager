@@ -18,6 +18,7 @@
     <v:String x:Key="lbl_NativeVlan">Базовый VLAN</v:String>
     <v:String x:Key="lbl_MCASTVlan">Multicast VLAN</v:String>
     <v:String x:Key="lbl_LoopBackDetection">Слежка за петлями</v:String>
+    <v:String x:Key="lbl_PortState">Состояние всех терминалов на порту</v:String>
     
     <v:String x:Key="menu_File">Файл</v:String>
     <v:String x:Key="menu_Lang">Язык</v:String>
@@ -27,6 +28,9 @@
     <v:String x:Key="Tooltip_v1">перед тем, как ввести номер порта, войдите в режим interface gpon, введя данные в поле тех. данные</v:String>
     <v:String x:Key="Tooltip_v2">Сюда вводится MAC адрес в формате xxxx-xxxx-xxxx</v:String>
     <v:String x:Key="Tooltip_v3">Как и данные пользователя, это поле также содержит фрейм, слот, порт и ID. Разница в том, что КОМАНДА содержит слово ont перед ID. Поэтому, в первое поле пишутся frame/slot/port, во второе - ID</v:String>
+    <v:String x:Key="Tooltip_v4">Для вывода списка ONT на слоту сначала войдите в режим interface gpon, введя данные в поле user data, а затем введите номер слота в поле напротив кнопки Показать список ONT</v:String>
+    <v:String x:Key="Tooltip_v5">Не забудьте войти в режим interface gpon, указав данные в User data. Сюда вводятся порт и ID через пробел ([] [])</v:String>
+    <v:String x:Key="Tooltip_v6">Нажав эту кнопку и введя полные тех. данные в формате [] [] [] [] (обязательно через пробел) вы увидите состояние конкретного терминала</v:String>
 
     <v:String x:Key="tab_BaseMode">Базовый режим</v:String>
     <v:String x:Key="tab_LogicMode">Логический режим</v:String>
@@ -57,8 +61,9 @@
     <v:String x:Key="btn_VlanTable">Показать таблицу VLAN</v:String>
     <v:String x:Key="btn_DeleteONT">Удалить</v:String>
     <v:String x:Key="btn_RestoreONT">Сбросить</v:String>
-    <v:String x:Key="btn_SlotActivity">Активность на лоту</v:String>
+    <v:String x:Key="btn_SlotActivity">Активность на слоту</v:String>
     <v:String x:Key="btn_SearchByMAC">Найти ONT по MAC</v:String>
     <v:String x:Key="btn_ShowServicePorts">Показать сервис-порты</v:String>
     <v:String x:Key="btn_ShowONTList">Показать список ONT</v:String>
+    <v:String x:Key="btn_ShowProfList">Список профилей</v:String>
 </ResourceDictionary>

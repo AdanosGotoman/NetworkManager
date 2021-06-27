@@ -202,7 +202,7 @@ namespace NetworkManager.UI.xPON
 
             commander.EnableAdmin_V1();
             commander.SearchONTByMacHuawei(mac);
-
+            commander.SendCommand("\n");
 
             writer = new RedirectOutput(searchByMac);
             Console.SetOut(writer);
@@ -269,27 +269,33 @@ namespace NetworkManager.UI.xPON
 
         private void UpdateProfiles(object sender, RoutedEventArgs e)
         {
-            commander.EnableAdmin_V1();
-            commander.ShowProfilesDSL();
-            commander.SendCommand("\n");
-            commander.DisableAdmin();
+            if  ((bool)chckDSL.IsChecked)
+            {
+                commander.EnableAdmin_V1();
+                commander.ShowProfilesDSL();
+                commander.SendCommand("\n");
+                commander.DisableAdmin();
 
-            writer = new RedirectOutput(profilesWND);
-            Console.SetOut(writer);
-            Console.WriteLine(telnet.Read());
+                writer = new RedirectOutput(profilesWND);
+                Console.SetOut(writer);
+                Console.WriteLine(telnet.Read());
+            }
         }
 
         private void UpdateLineParams(object sender, RoutedEventArgs e)
         {
-            commander.EnableAdmin_V1();
-            commander.ShowLineParameters(userData.Text);
-            commander.SendCommand("\n" + "y\n");
+            if ((bool)chckDSL.IsChecked)
+            {
+                commander.EnableAdmin_V1();
+                commander.ShowLineParameters(userData.Text);
+                commander.SendCommand("\n" + "y\n");
 
-            commander.DisableAdmin();
+                commander.DisableAdmin();
 
-            writer = new RedirectOutput(lineParams);
-            Console.SetOut(writer);
-            Console.WriteLine(telnet.Read());
+                writer = new RedirectOutput(lineParams);
+                Console.SetOut(writer);
+                Console.WriteLine(telnet.Read());
+            } 
         }
     }
 }

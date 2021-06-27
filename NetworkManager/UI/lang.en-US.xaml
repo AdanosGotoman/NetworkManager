@@ -18,6 +18,7 @@
     <v:String x:Key="lbl_NativeVlan">Native VLAN</v:String>
     <v:String x:Key="lbl_MCASTVlan">Multicast VLAN</v:String>
     <v:String x:Key="lbl_LoopBackDetection">Loopback detection</v:String>
+    <v:String x:Key="lbl_PortState">State of all ONT on port</v:String>
 
     <v:String x:Key="menu_File">File</v:String>
     <v:String x:Key="menu_Lang">Lang</v:String>
@@ -27,6 +28,9 @@
     <v:String x:Key="Tooltip_v1">before entering the port number, enter the interface gpon mode by entering the data in the user data</v:String>
     <v:String x:Key="Tooltip_v2">Here the mac address ont is entered in the form xxxx-xxxx-xxxx</v:String>
     <v:String x:Key="Tooltip_v3">Like user data, this field also contains frame, slot, port and ID. The difference is that the COMMAND contains the word ont before the ID. Therefore, frame/slot/port is written in the first field, and ID in the second.</v:String>
+    <v:String x:Key="Tooltip_v4">To display the ONT list on a slot, first enter the interface gpon mode by entering data in the user data field, and then enter the slot number in the field opposite the Show ONT list button</v:String>
+    <v:String x:Key="Tooltip_v5">Don't forget to enter interface gpon mode by entering data in User data. Here you enter the port and ID separated by a space ([] [])</v:String>
+    <v:String x:Key="Tooltip_v6">By clicking this button and entering the full tech. data in the format [] [] [] [] (must be separated by a space) you will see the state of a specific terminal</v:String>
 
     <v:String x:Key="tab_BaseMode">Base configure mode</v:String>
     <v:String x:Key="tab_LogicMode">Logic mode</v:String>
@@ -61,4 +65,5 @@
     <v:String x:Key="btn_SearchByMAC">Find ONT by MAC</v:String>
     <v:String x:Key="btn_ShowServicePorts">Show service-ports</v:String>
     <v:String x:Key="btn_ShowONTList">Show ONT list</v:String>
+    <v:String x:Key="btn_ShowProfList">Profile list</v:String>
 </ResourceDictionary>

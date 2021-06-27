@@ -48,6 +48,7 @@
                                 <TextBox x:Name="stateWNDbyPort" TextWrapping="Wrap" Margin="634,10,10,46" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
                                 <Button x:Name="btnUpdateStateByPort" Content="{DynamicResource btn_UpdateState}" HorizontalAlignment="Left" Margin="634,0,0,15" Click="UpdateStateByPort" Height="26" VerticalAlignment="Bottom" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
                                 <TextBox x:Name="portField" Margin="1138,0,0,16" TextWrapping="Wrap" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="120" Height="25" ToolTip="{DynamicResource Tooltip_v1}"/>
+                                <Label Content="{DynamicResource lbl_PortState}" HorizontalAlignment="Left" Margin="987,825,0,0" VerticalAlignment="Top" Width="auto" Foreground="#FF0094FF"/>
                             </Grid>
                         </TabItem>
                         <TabItem Header="{DynamicResource tab_AllONTList}" Background="#FF3F3F3F" Foreground="#FF0094FF">
@@ -60,7 +61,7 @@
                             <Grid Background="#FF212121">
                                 <TextBox x:Name="ontListBySlot" TextWrapping="Wrap" Margin="10,10,10,41" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
                                 <Button x:Name="btnListBySlot" Content="{DynamicResource btn_ShowONTList}" HorizontalAlignment="Left" Margin="10,0,0,10" Height="26" VerticalAlignment="Bottom" Click="ShowListONTBySlot" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF" Width="auto"/>
-                                <TextBox x:Name="slotNumber" HorizontalAlignment="Left" Margin="215,0,0,10" TextWrapping="Wrap" Width="49" Height="25" VerticalAlignment="Bottom"/>
+                                <TextBox x:Name="slotNumber" HorizontalAlignment="Left" Margin="215,0,0,10" TextWrapping="Wrap" Width="49" Height="25" VerticalAlignment="Bottom" ToolTip="{DynamicResource Tooltip_v4}"/>
                             </Grid>
                         </TabItem>
                         <TabItem Header="{DynamicResource tab_StateInfo}" Background="#FF3F3F3F" Foreground="#FF0094FF">
@@ -70,7 +71,14 @@
                                 <TextBox x:Name="ontSlot" HorizontalAlignment="Left" Margin="196,0,0,10" TextWrapping="Wrap" Width="48" Height="26" VerticalAlignment="Bottom"/>
                                 <TextBox x:Name="connectionHistory" TextWrapping="Wrap" Margin="634,10,10,41" Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
                                 <Button x:Name="btnConnectHistory" Content="{DynamicResource btn_UpdateHistory}" HorizontalAlignment="Left" Margin="634,0,0,10" Click="ShowConnectionHistory" Height="26" VerticalAlignment="Bottom"  Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF"/>
-                                <TextBox x:Name="port_id" HorizontalAlignment="Left" Margin="834,0,0,10" TextWrapping="Wrap" Width="48" Height="26" VerticalAlignment="Bottom"/>
+                                <TextBox x:Name="port_id" HorizontalAlignment="Left" Margin="834,0,0,10" TextWrapping="Wrap" Width="48" Height="26" VerticalAlignment="Bottom" ToolTip="{DynamicResource Tooltip_v5}"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="{DynamicResource tab_ConfigEditMode}" Background="#FF3F3F3F" Foreground="#FF0094FF">
+                            <Grid Background="#FF212121">
+                                <Label Content="{DynamicResource lbl_UserData}" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top"/>
+                                <TextBox x:Name="userData_Field" HorizontalAlignment="Left" Margin="60,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Cursor="IBeam"/>
+
                             </Grid>
                         </TabItem>
                     </TabControl>
@@ -82,9 +90,9 @@
                         <TabItem Header="{DynamicResource tab_BaseMode}" Background="#FF3F3F3F" Foreground="#FF0094FF">
                             <Grid Background="#FF212121">
                                 <TextBox x:Name="profilesWND" TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" Margin="10,10,746,41"  Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
-                                <Button x:Name="btnProfilesList" Content="Show profile list" Margin="10,0,0,10" Click="UpdateProfiles" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="166" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Hand"/>
+                                <Button x:Name="btnProfilesList" Content="{DynamicResource btn_ShowProfList}" Margin="10,0,0,10" Click="UpdateProfiles" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="166" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Hand"/>
                                 <TextBox x:Name="lineParams" TextWrapping="Wrap" RenderTransformOrigin="0.5,0.5" Margin="540,10,10,41"  Style="{StaticResource MaterialDesignOutlinedTextBox}" VerticalScrollBarVisibility="Auto" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Arrow"/>
-                                <Button x:Name="btnLineParams" Content="Show profile list" Margin="540,0,0,10" Click="UpdateLineParams" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="166" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Hand"/>
+                                <Button x:Name="btnLineParams" Content="{DynamicResource btn_ShowProfList}" Margin="540,0,0,10" Click="UpdateLineParams" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="166" Style="{StaticResource MaterialDesignRaisedDarkButton}" Background="#FF3F3F3F" Foreground="#FF0094FF" Cursor="Hand"/>
                             </Grid>
                         </TabItem>
                     </TabControl>
